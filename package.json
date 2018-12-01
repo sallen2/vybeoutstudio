@@ -1,0 +1,31 @@
+{
+  "name": "vybeoutstudio",
+  "version": "1.0.0",
+  "description": "DAW in the browser",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sallen2/vybeoutstudio.git"
+  },
+  "author": "Stephan, Uday, Jrew, Jeremy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sallen2/vybeoutstudio/issues"
+  },
+  "homepage": "https://github.com/sallen2/vybeoutstudio#readme",
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.3.14"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}
