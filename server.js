@@ -11,4 +11,4 @@ app.set('view engine', 'handlebars');
 
 app.use('/', vybeOut);
 
-app.listen(process.env.PORT || 8080, () => console.log('server up on port 8080'));
+app.listen(process.env.PORT || 8080, () => console.log('server up on http://localhost:8080'));
