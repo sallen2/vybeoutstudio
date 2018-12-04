@@ -179,6 +179,7 @@ $(document).ready(() => {
 
   $('#record').on('click', (e) => {
     record = !record;
+    $('#record').toggleClass('recordOn');
   });
 
   $('#synth').on('click', (e) => {
