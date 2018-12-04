@@ -14,6 +14,10 @@ router.get('/:userId/create', (req, res) => {
   res.render('create');
 });
 
+router.get('/test', (req, res) => {
+  res.render('test');
+});
+
 router.post('/:userId/create', (req, res) => {
   // post user beat to mongodb
   // then res.status(201).end()
