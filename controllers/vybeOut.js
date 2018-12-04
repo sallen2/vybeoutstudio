@@ -15,7 +15,7 @@ router.get('/:userId/create', (req, res) => {
 });
 
 router.get('/test', (req, res) => {
-  res.render('test');
+  res.render('create');
 });
 
 router.post('/:userId/create', (req, res) => {
