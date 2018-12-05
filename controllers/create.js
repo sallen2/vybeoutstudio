@@ -27,8 +27,19 @@ $( document ).ready(function() {
 
     }];
     var i =0;
+
+
     $("#plusbtn").on("click", function() {
-        console.log(i);
+        i++;
+        i++;
+        if (i===10){
+            i=0;
+        }
+
+        $('.dropdown-menu').show();});
+
+
+    $("#drumKit").on("click", function() {
         items.push({x: i, y: 0, width: 2, height: 1});
         items.shift();
 
@@ -39,12 +50,7 @@ $( document ).ready(function() {
                 node.x, node.y, node.width, node.height);
         }, this);
     });
-        i++;
-        i++;
-        if (i===10){
-            i=0;
-        }
-        $('.dropdown-menu').show();
+        $(".dropdown-menu").hide();
     });
 
 });
