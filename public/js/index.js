@@ -53,7 +53,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content">
+          <div class="grid-stack-item-content gridstackdrum">
           <button id="drums">drums</button>
           </div>
               </div>`),
@@ -73,7 +73,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content">
+          <div class="grid-stack-item-content gridstackpiano">
           <button id="piano">piano</button>
           </div>
               </div>`),
@@ -93,7 +93,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content">
+          <div class="grid-stack-item-content gridpluck">
           <button id="pluck">pluck</button>
           </div>
               </div>`),
@@ -113,7 +113,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content">
+          <div class="grid-stack-item-content gridsynth">
           <button id="synth">synth</button>
           </div>
               </div>`),
