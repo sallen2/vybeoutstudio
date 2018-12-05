@@ -9,6 +9,81 @@ $(document).ready(() => {
   let qu = '@32n';
   let prevKey = 0;
 
+  $(() => {
+    const options = {
+      float: true,
+      width: 12,
+      height: 4,
+      animate: true,
+      alwaysShowResizeHandle: true,
+      cellHeight: 110,
+      verticalMargin: 5,
+      horizontalMargin: 5,
+      placeholderClass: 'grid-stack-placeholder',
+      acceptWidgets: '.grid-stack-item',
+    };
+
+
+    $('.grid-stack').gridstack(_.defaults(options));
+
+    const items = [{
+
+    }];
+    let i = 0;
+
+
+    $('#plusbtn').on('click', () => {
+      i++;
+      i++;
+      if (i === 10) {
+        i = 0;
+      }
+
+      $('.dropdown-menu').show();
+    });
+
+
+    $('#drumKit').on('click', () => {
+      items.push({
+        x: i, y: 0, width: 2, height: 1,
+      });
+      items.shift();
+
+      $('.grid-stack').append(function addinst() {
+        const grid = $(this).data('gridstack');
+        _.each(items, (node) => {
+          grid.addWidget($(`<div>
+          <div class="grid-stack-item-content">
+          <button id="drums">drums</button>
+          </div>
+              </div>`),
+          node.x, node.y, node.width, node.height);
+        }, this);
+      });
+      $('.dropdown-menu').hide();
+    });
+
+    $('#piano').on('click', () => {
+      items.push({
+        x: i, y: 0, width: 2, height: 1,
+      });
+      items.shift();
+
+      $('.grid-stack').append(function addinst() {
+        const grid = $(this).data('gridstack');
+        _.each(items, (node) => {
+          grid.addWidget($(`<div>
+          <div class="grid-stack-item-content">
+          <button id="piano">piano</button>
+          </div>
+              </div>`),
+          node.x, node.y, node.width, node.height);
+        }, this);
+      });
+      $('.dropdown-menu').hide();
+    });
+  });
+
   const Instruments = {
     // https://github.com/stuartmemo/qwerty-hancock
     keyboard: {

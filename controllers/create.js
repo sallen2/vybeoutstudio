@@ -6,77 +6,17 @@ $(document).ready(() => {
   $('.dropdown-menu').hide();
 });
 
+Tone.Transport.bpm.value = 120;
 Tone.context.latencyHint = 'fastest';
 let octave = 4;
 const record = false;
 const keys = [];
-
-$(() => {
-  const options = {
-    float: true,
-    width: 12,
-    height: 4,
-    animate: true,
-    alwaysShowResizeHandle: true,
-    cellHeight: 110,
-    verticalMargin: 5,
-    horizontalMargin: 5,
-    placeholderClass: 'grid-stack-placeholder',
-    acceptWidgets: '.grid-stack-item',
-  };
+const arr = [];
+let part;
+const qu = '@32n';
+let prevKey = 0;
 
 
-  $('.grid-stack').gridstack(_.defaults(options));
-
-  const items = [{
-
-  }];
-  let i = 0;
-
-
-  $('#plusbtn').on('click', () => {
-    i++;
-    i++;
-    if (i === 10) {
-      i = 0;
-    }
-
-    $('.dropdown-menu').show();
-  });
-
-
-  $('#drumKit').on('click', () => {
-    const ins = new Tone.Sampler({
-      C4: '../public/sounds/LL_hihat_remix.wav',
-      D4: '../public/sounds/LL_snare_pyrex.wav',
-      F4: '../public/sounds/808.wav',
-      E4: '../public/sounds/FX_VoxBobby_Wet.wav',
-    }, {
-      release: 1,
-    }).toMaster();
-    const drums = {
-      ins,
-      arr: [],
-    };
-    ins.volume.value = -10;
-    onKeyDown(drums);
-    onKeyUp(drums);
-    items.push({
-      x: i, y: 0, width: 2, height: 1,
-    });
-    items.shift();
-
-    $('.grid-stack').append(function addinst() {
-      const grid = $(this).data('gridstack');
-      _.each(items, (node) => {
-        grid.addWidget($(`<div><div class="grid-stack-item-content" />
-            </div>`),
-        node.x, node.y, node.width, node.height);
-      }, this);
-    });
-    $('.dropdown-menu').hide();
-  });
-});
 
 
 const Instruments = {
@@ -193,7 +133,51 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'x') { octave = Math.min(octave + 1, 9); }
 });
 
-
-$('button').on('click', '#drums', (e) => {
-
+$(document).on('click', '#drums', (e) => {
+  console.log('hello world');
+  const ins = new Tone.Sampler({
+    C4: '../public/sounds/LL_hihat_remix.wav',
+    D4: '../public/sounds/LL_snare_pyrex.wav',
+    F4: '../public/sounds/808.wav',
+    E4: '../public/sounds/FX_VoxBobby_Wet.wav',
+  }, {
+    release: 1,
+  }).toMaster();
+  const drums = {
+    ins,
+    arr: [],
+  };
+  ins.volume.value = -10;
+  onKeyDown(drums);
+  onKeyUp(drums);
 });
+
+$(document).on('click', '#piano', (e) => {
+  const ins = new Tone.Sampler({
+    C4: '../public/sounds/piano.wav',
+  }, {
+    release: 1,
+  }).toMaster();
+  const piano = {
+    ins,
+    arr: [],
+  };
+  ins.volume.value = -25;
+  onKeyDown(piano);
+  onKeyUp(piano);
+});
+
+$(document).on('click','#pluck' (e) => {
+    const ins = new Tone.Sampler({
+      C4: '../sounds/pluck.wav',
+    }, {
+      release: 1,
+    }).toMaster();
+    const pluck = {
+      ins,
+      arr: [],
+    };
+    ins.volume.value = -10;
+    onKeyDown(pluck);
+    onKeyUp(pluck);
+  });
