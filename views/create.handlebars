@@ -1,5 +1,4 @@
-<button id="start">Start</button>
-<button id="stop">Stop</button>
+<!--<button id="switchcss"><input type="checkbox"> Change Background</button>-->
 <div class="container-fluid">
 
     <div class="row dropdown">
@@ -22,8 +21,9 @@
 
 
 </div>
+<div class="container">
 <form action="#">
-    <select id="grid" name="Grid">
+    <select id="form" name="Grid">
         <option value="@4n">4</option>
         <option value="@8n">8</option>
         <option value="@16n">16</option>
@@ -31,8 +31,12 @@
     </select>
     <button id="confirm">Quantize</button>
 </form>
-<button id="record">record</button>
-<div>Bpm
+<button id="record">record</button><br><br>
+<div>
     <input id="bpm" type="range" min="50" max="200" step="1" value="120">
 </div>
+<button id="start">Start</button>
+<button id="stop">Stop</button>
 <h2>Tempo: <span id="tempo">120</span></h2>
+
+</div>
