@@ -82,6 +82,46 @@ $(document).ready(() => {
       });
       $('.dropdown-menu').hide();
     });
+
+    $('#pluck').on('click', () => {
+      items.push({
+        x: i, y: 0, width: 2, height: 1,
+      });
+      items.shift();
+
+      $('.grid-stack').append(function addinst() {
+        const grid = $(this).data('gridstack');
+        _.each(items, (node) => {
+          grid.addWidget($(`<div>
+          <div class="grid-stack-item-content">
+          <button id="pluck">pluck</button>
+          </div>
+              </div>`),
+          node.x, node.y, node.width, node.height);
+        }, this);
+      });
+      $('.dropdown-menu').hide();
+    });
+
+    $('#synth').on('click', () => {
+      items.push({
+        x: i, y: 0, width: 2, height: 1,
+      });
+      items.shift();
+
+      $('.grid-stack').append(function addinst() {
+        const grid = $(this).data('gridstack');
+        _.each(items, (node) => {
+          grid.addWidget($(`<div>
+          <div class="grid-stack-item-content">
+          <button id="synth">synth</button>
+          </div>
+              </div>`),
+          node.x, node.y, node.width, node.height);
+        }, this);
+      });
+      $('.dropdown-menu').hide();
+    });
   });
 
   const Instruments = {
@@ -238,7 +278,7 @@ $(document).ready(() => {
     $('#record').toggleClass('recordOn');
   });
 
-  $('#synth').on('click', (e) => {
+  $(document).on('click', '#synth', (e) => {
     const ins = new Tone.PluckSynth().toMaster();
     const plucked = {
       ins,
@@ -248,7 +288,7 @@ $(document).ready(() => {
     onKeyUp(plucked);
   });
 
-  $('#drums').on('click', (e) => {
+  $(document).on('click', '#drums', (e) => {
     const ins = new Tone.Sampler({
       C4: '../sounds/LL_hihat_remix.wav',
       D4: '../sounds/LL_snare_pyrex.wav',
@@ -266,7 +306,7 @@ $(document).ready(() => {
     onKeyUp(drums);
   });
 
-  $('#piano').on('click', (e) => {
+  $(document).on('click', '#piano', (e) => {
     const ins = new Tone.Sampler({
       C4: '../sounds/piano.wav',
     }, {
@@ -281,7 +321,7 @@ $(document).ready(() => {
     onKeyUp(piano);
   });
 
-  $('#pluck').on('click', (e) => {
+  $(document).on('click', '#pluck', (e) => {
     const ins = new Tone.Sampler({
       C4: '../sounds/pluck.wav',
     }, {
