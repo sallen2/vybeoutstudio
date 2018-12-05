@@ -33,7 +33,7 @@ body {
 
     text-align: center;
     line-height: 100px;
-    z-index: 10;
+    z-index: 5;
     cursor: grab;
     display: inline-grid;
 }
