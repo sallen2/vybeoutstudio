@@ -122,6 +122,66 @@ $(document).ready(() => {
       });
       $('.dropdown-menu').hide();
     });
+
+    $('#flute').on('click', () => {
+      items.push({
+        x: i, y: 0, width: 2, height: 1,
+      });
+      items.shift();
+
+      $('.grid-stack').append(function addinst() {
+        const grid = $(this).data('gridstack');
+        _.each(items, (node) => {
+          grid.addWidget($(`<div>
+          <div class="grid-stack-item-content">
+          <button id="flute">flute</button>
+          </div>
+              </div>`),
+          node.x, node.y, node.width, node.height);
+        }, this);
+      });
+      $('.dropdown-menu').hide();
+    });
+
+    $('#sax').on('click', () => {
+      items.push({
+        x: i, y: 0, width: 2, height: 1,
+      });
+      items.shift();
+
+      $('.grid-stack').append(function addinst() {
+        const grid = $(this).data('gridstack');
+        _.each(items, (node) => {
+          grid.addWidget($(`<div>
+          <div class="grid-stack-item-content">
+          <button id="sax">sax</button>
+          </div>
+              </div>`),
+          node.x, node.y, node.width, node.height);
+        }, this);
+      });
+      $('.dropdown-menu').hide();
+    });
+
+    $('#trumpets').on('click', () => {
+      items.push({
+        x: i, y: 0, width: 2, height: 1,
+      });
+      items.shift();
+
+      $('.grid-stack').append(function addinst() {
+        const grid = $(this).data('gridstack');
+        _.each(items, (node) => {
+          grid.addWidget($(`<div>
+          <div class="grid-stack-item-content">
+          <button id="trumpet">trumpet</button>
+          </div>
+              </div>`),
+          node.x, node.y, node.width, node.height);
+        }, this);
+      });
+      $('.dropdown-menu').hide();
+    });
   });
 
   const Instruments = {
@@ -319,6 +379,51 @@ $(document).ready(() => {
     ins.volume.value = -25;
     onKeyDown(piano);
     onKeyUp(piano);
+  });
+
+  $(document).on('click', '#flute', (e) => {
+    const ins = new Tone.Sampler({
+      C4: '../sounds/flute_1.wav',
+    }, {
+      release: 1,
+    }).toMaster();
+    const flute = {
+      ins,
+      arr: [],
+    };
+    ins.volume.value = -15;
+    onKeyDown(flute);
+    onKeyUp(flute);
+  });
+
+  $(document).on('click', '#sax', (e) => {
+    const ins = new Tone.Sampler({
+      C4: '../sounds/sax_1.wav',
+    }, {
+      release: 1,
+    }).toMaster();
+    const sax = {
+      ins,
+      arr: [],
+    };
+    ins.volume.value = -15;
+    onKeyDown(sax);
+    onKeyUp(sax);
+  });
+
+  $(document).on('click', '#trumpet', (e) => {
+    const ins = new Tone.Sampler({
+      C4: '../sounds/trumpet_1.wav',
+    }, {
+      release: 1,
+    }).toMaster();
+    const trumpet = {
+      ins,
+      arr: [],
+    };
+    ins.volume.value = -15;
+    onKeyDown(trumpet);
+    onKeyUp(trumpet);
   });
 
   $(document).on('click', '#pluck', (e) => {
