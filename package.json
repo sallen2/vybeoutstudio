@@ -21,9 +21,14 @@
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
+<<<<<<< HEAD
+    "mongoose": "^5.3.14",
+    "nodemon": "^1.18.7"
+=======
     "gridstack": "^0.4.0",
     "mongoose": "^5.3.14",
     "require": "^2.4.20"
+>>>>>>> 39126bf8cab9d479db487a63841656e64e6079b0
   },
   "devDependencies": {
     "eslint": "^5.9.0",
