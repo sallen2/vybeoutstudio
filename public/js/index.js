@@ -8,26 +8,7 @@ $(document).ready(() => {
   let part;
   let qu = '@32n';
   let prevKey = 0;
-  const drums = new Tone.Sampler({
-    C4: '../sounds/LL_hihat_remix.wav',
-    D4: '../sounds/LL_snare_pyrex.wav',
-    F4: '../sounds/808.wav',
-    E4: '../sounds/FX_VoxBobby_Wet.wav',
-  }, {
-    release: 1,
-  }).toMaster();
 
-  const pluck = new Tone.Sampler({
-    C4: '../sounds/pluck.wav',
-  }, {
-    release: 1,
-  }).toMaster();
-
-  const piano = new Tone.Sampler({
-    C4: '../sounds/piano.wav',
-  }, {
-    release: 1,
-  }).toMaster();
   const Instruments = {
     // https://github.com/stuartmemo/qwerty-hancock
     keyboard: {
@@ -87,14 +68,14 @@ $(document).ready(() => {
             prevKey = key;
             if (record) {
               var event = new Tone.Event(((position, theNote) => {
-                ins.triggerAttackRelease(theNote, '4n', qu);
+                ins.ins.triggerAttackRelease(theNote, '4n', qu);
               }), note);
-              arr.push([Tone.Transport.position, note]);
+              ins.arr.push([Tone.Transport.position, note]);
               console.log(arr);
               event.humanize = true;
               event.start();
             } else {
-              ins.triggerAttack(note);
+              ins.ins.triggerAttack(note);
             }
           }
         }
@@ -125,7 +106,7 @@ $(document).ready(() => {
           const note = keyToNote(key);
           if (note && key === prevKey) {
             // Trigger release if this is the previous note played.
-            ins.triggerRelease();
+            ins.ins.triggerRelease();
           }
         }
       };
@@ -183,25 +164,59 @@ $(document).ready(() => {
   });
 
   $('#synth').on('click', (e) => {
-    const synth = new Tone.PluckSynth().toMaster();
-    onKeyDown(synth);
-    onKeyUp(synth);
+    const ins = new Tone.PluckSynth().toMaster();
+    const plucked = {
+      ins,
+      arr: [],
+    };
+    onKeyDown(plucked);
+    onKeyUp(plucked);
   });
 
   $('#drums').on('click', (e) => {
-    drums.volume.value = -10;
+    const ins = new Tone.Sampler({
+      C4: '../sounds/LL_hihat_remix.wav',
+      D4: '../sounds/LL_snare_pyrex.wav',
+      F4: '../sounds/808.wav',
+      E4: '../sounds/FX_VoxBobby_Wet.wav',
+    }, {
+      release: 1,
+    }).toMaster();
+    const drums = {
+      ins,
+      arr: [],
+    };
+    ins.volume.value = -10;
     onKeyDown(drums);
     onKeyUp(drums);
   });
 
   $('#piano').on('click', (e) => {
-    piano.volume.value = -25;
+    const ins = new Tone.Sampler({
+      C4: '../sounds/piano.wav',
+    }, {
+      release: 1,
+    }).toMaster();
+    const piano = {
+      ins,
+      arr: [],
+    };
+    ins.volume.value = -25;
     onKeyDown(piano);
     onKeyUp(piano);
   });
 
   $('#pluck').on('click', (e) => {
-    pluck.volume.value = -10;
+    const ins = new Tone.Sampler({
+      C4: '../sounds/pluck.wav',
+    }, {
+      release: 1,
+    }).toMaster();
+    const pluck = {
+      ins,
+      arr: [],
+    };
+    ins.volume.value = -10;
     onKeyDown(pluck);
     onKeyUp(pluck);
   });
