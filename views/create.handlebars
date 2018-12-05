@@ -1,7 +1,12 @@
-<div class="text-right"><strong>click the bottom right corner once you add an instrument to customize your dashboard!</strong></div>
+
 <div class="container-fluid">
 
     <div class="row dropdown">
+
+        <button id="record"><svg height="100" width="100">
+            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+        </svg><br>record</button>
+<div class="col-md-2">
         <button id="plusbtn" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
             <svg width="100" height="100" class="icon  icon--plus" viewBox="0 0 5 5" xmlns="http://www.w3.org/2000/svg">
@@ -17,37 +22,40 @@
             <a class="dropdown-item" id='flute' href="#">flute</a>
             <a class="dropdown-item" id='sax' href="#">sax</a>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12 grid-stack"></div>
+</div>
+    <form action="#">
+        <div class="input-group">
+            <select id='grid' class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                <option selected>Choose...</option>
+
+                <option value="@4n">4</option>
+                <option value="@8n">8</option>
+                <option value="@16n">16</option>
+                <option value="@32n">32</option>
+            </select>
+            <div class="input-group-append">
+                <button id='confirm' class="btn btn-outline-secondary" type="button">quantize</button>
+            </div>
+        </div>
+    </form>
+
+
+
+    <div>
+        <input id="bpm" type="range" min="50" max="200" step="1" value="120">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <h3>Tempo: <span id="tempo">120</span></h3>
     </div>
 
+
+        <div class="text-right"><strong>click the bottom right corner once you add an instrument to customize your dashboard!</strong></div>
+    </div>
 </div>
 
 <div class="container">
-
-<form action="#">
-<div class="input-group">
-    <select id='grid' class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-        <option selected>Choose...</option>
-
-        <option value="@4n">4</option>
-        <option value="@8n">8</option>
-        <option value="@16n">16</option>
-        <option value="@32n">32</option>
-    </select>
-    <div class="input-group-append">
-        <button id='confirm' class="btn btn-outline-secondary" type="button">quantize</button>
+    <div class="row">
+        <div class="col-lg-12 grid-stack"></div>
     </div>
-</div>
-</form>
-
-<button id="record">record</button><br><br>
-
-<div>
-    <input id="bpm" type="range" min="50" max="200" step="1" value="120">
-<button id="start">Start</button>
-<button id="stop">Stop</button>
-<h2>Tempo: <span id="tempo">120</span></h2>
 
 </div>
