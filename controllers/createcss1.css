@@ -1,25 +1,18 @@
-#plusbtn{
+#plusbtn {
     background-color: #30332e;
 }
+
 svg {
-fill: #fff3e0;
+    fill: #fff3e0;
     margin: -15px -15px -15px -15px;
     stroke: #fff3e0;
     stroke-width: 0.1;
     stroke-linejoin: round;
 }
+
 body {
     background: #011627;
     color: #fff;
-}
-
-/*body2*/
-
-/*grid stack item 2*/
-
-.sidebar {
-    /*   background: lightblue; */
-    height: 100%;
 }
 
 .grid-stack {
@@ -33,17 +26,16 @@ body {
 .grid-container {
     padding-top: 15px;
     padding-bottom: 15px;
-    height: 542px;
-    background: #FfF3e0;
+    background-color: #011627;
 }
 
-.sidebar .grid-stack-item {
+.grid-stack-item {
 
     text-align: center;
     line-height: 100px;
     z-index: 10;
     cursor: grab;
-    display: inline-block;
+    display: inline-grid;
 }
 
 .grid-stack-item-content {
@@ -51,38 +43,11 @@ body {
     color: #2c3e50;
     text-align: center;
     font-size: 20px;
-}
-
-.grid-stack .grid-stack-item[data-gs-width="4"] {
-    width: 100%
-}
-
-.grid-stack .grid-stack-item[data-gs-width="3"] {
-    width: 75%
-}
-
-.grid-stack .grid-stack-item[data-gs-width="2"] {
-    width: 50%
-}
-
-.grid-stack .grid-stack-item[data-gs-width="1"] {
-    width: 25%
-}
-
-.grid-stack .grid-stack-item[data-gs-x="3"] {
-    left: 75%
-}
-
-.grid-stack .grid-stack-item[data-gs-x="2"] {
-    left: 50%
-}
-
-.grid-stack .grid-stack-item[data-gs-x="1"] {
-    left: 25%
+    width:100%;
 }
 
 
-.sidebar .grid-stack-item[data-gs-width="1"] {
-    width: 100%
-}
 
+.grid-stack {
+    width: 33%;
+}

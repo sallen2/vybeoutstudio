@@ -2,19 +2,24 @@
 // var express = require("express");
 // var gridstack = require("gridstack");
 
-$(function() {
-    var options = {
-        float: true,
-        width: 4,
-        height: 4,
-        animate: true,
-        alwaysShowResizeHandle: true,
-        cellHeight: 110,
-        verticalMargin: 18,
-        horizontalMargin: 9,
-        placeholderClass: 'grid-stack-placeholder',
-        acceptWidgets: '.grid-stack-item'
-    };
+$( document ).ready(function() {
+    $(".dropdown-menu").hide();});
+
+
+    $(function() {
+        var options = {
+            float: true,
+            width: 12,
+            height: 4,
+            animate: true,
+            alwaysShowResizeHandle: true,
+            cellHeight: 110,
+            verticalMargin: 5,
+            horizontalMargin: 5,
+            placeholderClass: 'grid-stack-placeholder',
+            acceptWidgets: '.grid-stack-item'
+        };
+
 
     $('.grid-stack').gridstack(_.defaults(options));
 
@@ -24,7 +29,7 @@ $(function() {
     var i =0;
     $("#plusbtn").on("click", function() {
         console.log(i);
-        items.push({x: i, y: 0, width: 1, height: 1});
+        items.push({x: i, y: 0, width: 2, height: 1});
         items.shift();
 
     $('.grid-stack').append(function addinst() {
@@ -34,10 +39,12 @@ $(function() {
                 node.x, node.y, node.width, node.height);
         }, this);
     });
-    i++;
-        if (i===3){
+        i++;
+        i++;
+        if (i===10){
             i=0;
-        };
+        }
+        $('.dropdown-menu').show();
     });
 
 });
