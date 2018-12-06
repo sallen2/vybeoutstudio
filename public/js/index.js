@@ -8,6 +8,12 @@ $(document).ready(() => {
   let part;
   let qu = '@32n';
   let prevKey = 0;
+  let save = false;
+  let theEvent;
+  const actx = Tone.context;
+  const dest = actx.createMediaStreamDestination();
+  const recorder = new MediaRecorder(dest.stream);
+  const chunks = [];
 
   $(() => {
     const options = {
@@ -242,13 +248,11 @@ $(document).ready(() => {
           if (note) {
             prevKey = key;
             if (record) {
-              var event = new Tone.Event(((position, theNote) => {
+              theEvent = new Tone.Event(((position, theNote) => {
                 ins.ins.triggerAttackRelease(theNote, '4n', qu);
               }), note);
-              ins.arr.push([Tone.Transport.position, note]);
-              console.log(arr);
-              event.humanize = true;
-              event.start();
+              theEvent.humanize = true;
+              theEvent.start();
             } else {
               ins.ins.triggerAttack(note);
             }
@@ -306,8 +310,7 @@ $(document).ready(() => {
       player.start();
     }, '4n');
     Tone.Transport.loop = true;
-    Tone.Transport.loopStart = 0;
-    Tone.Transport.loopEnd = 4;
+    Tone.Transport.setLoopPoints(0, '2m');
     Tone.Transport.start();
   }
 
@@ -316,15 +319,42 @@ $(document).ready(() => {
     $('#tempo').text(Tone.Transport.bpm.value = +e.target.value);
   });
 
+
   function stop() {
+    console.log(Tone.TransportTime().toBarsBeatsSixteenths());
     Tone.Transport.stop();
   }
+
+  $('#save').on('click', (e) => {
+    recorder.ondataavailable = evt => chunks.push(evt.data);
+    recorder.start();
+    Tone.Transport.start();
+  });
+
+  $('#stopSave').on('click', (e) => {
+    recorder.stop();
+    Tone.Transport.stop();
+    recorder.onstop = (evt) => {
+      const blob = new Blob(chunks, { type: 'audio/ogg; codecs=opus' });
+      const fd = new FormData();
+      fd.append('audio', blob, 'blobby.ogg');
+      console.log(blob);
+      $.ajax({
+        method: 'POST',
+        url: '/create',
+        data: fd,
+        processData: false,
+        contentType: false,
+      }).done(location.reload());
+    };
+  });
 
   $('#start').on('click', (e) => {
     start();
   });
 
   $('#stop').on('click', (e) => {
+    save = false;
     stop();
   });
 
@@ -339,7 +369,9 @@ $(document).ready(() => {
   });
 
   $(document).on('click', '#synth', (e) => {
-    const ins = new Tone.PluckSynth().toMaster();
+    const ins = new Tone.PluckSynth();
+    ins.connect(dest);
+    ins.toMaster();
     const plucked = {
       ins,
       arr: [],
@@ -356,7 +388,9 @@ $(document).ready(() => {
       E4: '../sounds/FX_VoxBobby_Wet.wav',
     }, {
       release: 1,
-    }).toMaster();
+    });
+    ins.connect(dest);
+    ins.toMaster();
     const drums = {
       ins,
       arr: [],
@@ -371,7 +405,9 @@ $(document).ready(() => {
       C4: '../sounds/piano.wav',
     }, {
       release: 1,
-    }).toMaster();
+    });
+    ins.connect(dest);
+    ins.toMaster();
     const piano = {
       ins,
       arr: [],
@@ -386,7 +422,9 @@ $(document).ready(() => {
       C4: '../sounds/flute_1.wav',
     }, {
       release: 1,
-    }).toMaster();
+    });
+    ins.connect(dest);
+    ins.toMaster();
     const flute = {
       ins,
       arr: [],
@@ -401,7 +439,9 @@ $(document).ready(() => {
       C4: '../sounds/sax_1.wav',
     }, {
       release: 1,
-    }).toMaster();
+    });
+    ins.connect(dest);
+    ins.toMaster();
     const sax = {
       ins,
       arr: [],
@@ -416,7 +456,9 @@ $(document).ready(() => {
       C4: '../sounds/trumpet_1.wav',
     }, {
       release: 1,
-    }).toMaster();
+    });
+    ins.connect(dest);
+    ins.toMaster();
     const trumpet = {
       ins,
       arr: [],
@@ -431,7 +473,9 @@ $(document).ready(() => {
       C4: '../sounds/pluck.wav',
     }, {
       release: 1,
-    }).toMaster();
+    });
+    ins.connect(dest);
+    ins.toMaster();
     const pluck = {
       ins,
       arr: [],

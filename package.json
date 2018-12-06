@@ -18,11 +18,15 @@
   },
   "homepage": "https://github.com/sallen2/vybeoutstudio#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
+    "gridfs-stream": "^1.1.1",
     "gridstack": "^0.4.0",
     "mongoose": "^5.3.14",
+    "multer": "^1.4.1",
+    "multer-gridfs-storage": "^3.2.3",
     "require": "^2.4.20"
   },
   "devDependencies": {
