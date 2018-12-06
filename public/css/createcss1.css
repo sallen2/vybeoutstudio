@@ -106,3 +106,14 @@ button:focus {
 .input-group {
     width:15%;
 }
+#record:focus {
+    background-color: #FFF3e0;
+    color: #000000;
+}
+#record{
+    max-height:100px;
+}
+#bpm {
+    width:350px;
+    margin-left: 5px;
+}
