@@ -54,7 +54,10 @@ router.get('/create', (req, res) => {
 });
 
 router.get('/contribute', (req, res) => {
-  res.render('contribute');
+  gfs.files.find().toArray((err, files) => {
+    if (err) throw new Error('Something went wrong');
+    res.render('contribute', { files });
+  });
 });
 
 router.get('/Ccreate', (req, res) => {
