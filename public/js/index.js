@@ -331,6 +331,10 @@ $(document).ready(() => {
     recorder.start();
   });
 
+  $('#modalButton').on('click', (e) => {
+    $('#modal1').modal('open');
+  });
+
   $('#stopSave').on('click', (e) => {
     recorder.stop();
     Tone.Transport.stop();
@@ -365,7 +369,6 @@ $(document).ready(() => {
 
   $('#record').on('click', (e) => {
     record = !record;
-    $('#record').toggleClass('recordOn');
   });
 
   $(document).on('click', '#synth', (e) => {
