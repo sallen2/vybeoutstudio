@@ -305,13 +305,13 @@ $(document).ready(() => {
   // Metronome
   const player = new Tone.Player('../sounds/metro_beat.wav').toMaster();
 
-  function start() {
+  function start(bool) {
     Tone.Transport.scheduleRepeat((time) => {
       player.start();
     }, '4n');
-    Tone.Transport.loop = true;
+    Tone.Transport.loop = bool;
     Tone.Transport.setLoopPoints(0, '2m');
-    Tone.Transport.start();
+    Tone.Transport.start('+0.1', '1:2:4.999');
   }
 
   document.getElementById('bpm').addEventListener('input', (e) => {
@@ -326,9 +326,9 @@ $(document).ready(() => {
   }
 
   $('#save').on('click', (e) => {
+    start(true);
     recorder.ondataavailable = evt => chunks.push(evt.data);
     recorder.start();
-    Tone.Transport.start();
   });
 
   $('#stopSave').on('click', (e) => {
@@ -350,7 +350,7 @@ $(document).ready(() => {
   });
 
   $('#start').on('click', (e) => {
-    start();
+    start(true);
   });
 
   $('#stop').on('click', (e) => {
