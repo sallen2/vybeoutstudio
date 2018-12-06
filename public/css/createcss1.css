@@ -99,7 +99,7 @@ button:focus {
 }
 .gridtrumpet{
     background-image: url("https://3yoyr53fr4c8sig6z3tnt3tj-wpengine.netdna-ssl.com/wp-content/uploads/2018/09/Andy-Taylor-Uncle-Sam-B-flat-Trumpet-1996.-Photo-courtesy-of-the-National-Music-Museum.jpg");
-    background-size: initial;
+    background-size: contain;
 }
 
 
@@ -116,4 +116,25 @@ button:focus {
 #bpm {
     width:350px;
     margin-left: 5px;
+}
+
+.instbtn {
+ position: absolute;
+    margin-top: -1px;
+}
+
+.gridflute {
+    background-image: url("https://i.ytimg.com/vi/RhkI6gMUAb0/maxresdefault.jpg");
+    background-size: contain;
+}
+.gridsax {
+background-image: url("http://www.geocities.ws/jazzsaxamaphone1212/electric_sax.gif");
+    background-size: contain;
+}
+h5 {
+    font-weight: bolder;
+    color: #C5EBC3;
+}
+h6 {
+    color: greenyellow;
 }
