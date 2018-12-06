@@ -57,6 +57,8 @@ li:hover > .navText {
     background-color: #011627;
     box-shadow: 2px 2px 25px #fff3E0; 
     transition: box-shadow 1s, background-color 1s;
+    overflow: hidden;
+
 }
 
 .mainBoxes:hover {
