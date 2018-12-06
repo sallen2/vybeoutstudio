@@ -57,6 +57,10 @@ router.get('/contribute', (req, res) => {
   res.render('contribute');
 });
 
+router.get('/Ccreate', (req, res) => {
+  res.render('createContribute');
+});
+
 router.post('/create', upload.single('audio'), (req, res) => {
   console.log(req.file);
   res.status(201).end();
