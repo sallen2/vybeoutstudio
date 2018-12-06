@@ -111,7 +111,7 @@ button:focus {
     color: #000000;
 }
 #record{
-    max-height:100px;
+    height:108px;
 }
 #bpm {
     width:350px;
