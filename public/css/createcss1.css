@@ -131,5 +131,10 @@ button:focus {
 background-image: url("http://www.geocities.ws/jazzsaxamaphone1212/electric_sax.gif");
     background-size: contain;
 }
-
-
+h5 {
+    font-weight: bolder;
+    color: #C5EBC3;
+}
+h6 {
+    color: greenyellow;
+}
