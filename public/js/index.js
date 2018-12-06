@@ -54,7 +54,7 @@ $(document).ready(() => {
         _.each(items, (node) => {
           grid.addWidget($(`<div>
           <div class="grid-stack-item-content gridstackdrum">
-          <button id="drums">drums</button>
+          <button id="drums" class="instbtn">drums</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -74,7 +74,7 @@ $(document).ready(() => {
         _.each(items, (node) => {
           grid.addWidget($(`<div>
           <div class="grid-stack-item-content gridstackpiano">
-          <button id="piano">piano</button>
+          <button id="piano" class="instbtn">piano</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -94,7 +94,7 @@ $(document).ready(() => {
         _.each(items, (node) => {
           grid.addWidget($(`<div>
           <div class="grid-stack-item-content gridpluck">
-          <button id="pluck">pluck</button>
+          <button id="pluck" class="instbtn">pluck</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -114,7 +114,7 @@ $(document).ready(() => {
         _.each(items, (node) => {
           grid.addWidget($(`<div>
           <div class="grid-stack-item-content gridsynth">
-          <button id="synth">synth</button>
+          <button id="synth" class="instbtn">synth</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -133,8 +133,8 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content">
-          <button id="flute">flute</button>
+          <div class="grid-stack-item-content gridflute">
+          <button id="flute" class="instbtn">flute</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -153,8 +153,8 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content">
-          <button id="sax">sax</button>
+          <div class="grid-stack-item-content gridsax">
+          <button id="sax" class="instbtn">sax</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -173,8 +173,8 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content">
-          <button id="trumpet">trumpet</button>
+          <div class="grid-stack-item-content gridtrumpet">
+          <button id="trumpet" class="instbtn">trumpet</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
