@@ -1,1 +1,6 @@
 <h1>View Page!</h1>
+{{#each files }}
+<audio controls loop>
+     <source src="/audio/{{filename}}" type="audio/ogg">
+</audio>
+{{/each}}
