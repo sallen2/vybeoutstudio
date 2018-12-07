@@ -39,19 +39,18 @@ $(document).ready(() => {
 
 
     $('#plusbtn').on('click', () => {
-      if($("#plusbtn").hasClass("talib")) {
-          $('.dropdown-menu').hide();
-          $("#plusbtn").removeClass("talib");
-      }
-      else {
-          i++;
-          i++;
-          if (i === 10) {
-              i = 0;
-          }
+      if ($('#plusbtn').hasClass('talib')) {
+        $('.dropdown-menu').hide();
+        $('#plusbtn').removeClass('talib');
+      } else {
+        i++;
+        i++;
+        if (i === 10) {
+          i = 0;
+        }
 
-      $('.dropdown-menu').show();
-      $("#plusbtn").addClass("talib");
+        $('.dropdown-menu').show();
+        $('#plusbtn').addClass('talib');
       }
     });
 
@@ -315,7 +314,7 @@ $(document).ready(() => {
 
   function start(bool) {
     Tone.Transport.scheduleRepeat((time) => {
-      player.start();
+      // player.start();
       player2.start();
     }, '4n');
     Tone.Transport.loop = bool;
