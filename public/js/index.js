@@ -325,33 +325,29 @@ $(document).ready(() => {
     Tone.Transport.stop();
   }
 
-  $('#save').on('click', (e) => {
+  $('#share').on('click', (e) => {
     start(true);
     recorder.ondataavailable = evt => chunks.push(evt.data);
     recorder.start();
-  });
-
-  $('#modalButton').on('click', (e) => {
-    $('.modal').modal();
-    $('#modal1').modal('open');
-  });
-
-  $('#stopSave').on('click', (e) => {
-    recorder.stop();
-    Tone.Transport.stop();
-    recorder.onstop = (evt) => {
-      const blob = new Blob(chunks, { type: 'audio/ogg; codecs=opus' });
-      const fd = new FormData();
-      fd.append('audio', blob, 'blobby.ogg');
-      console.log(blob);
-      $.ajax({
-        method: 'POST',
-        url: '/create',
-        data: fd,
-        processData: false,
-        contentType: false,
-      }).done(location.reload());
-    };
+    setTimeout(() => {
+      recorder.stop();
+      Tone.Transport.stop();
+      recorder.onstop = (evt) => {
+        const blob = new Blob(chunks, { type: 'audio/ogg; codecs=opus' });
+        const fd = new FormData();
+        fd.append('audio', blob, 'blobby.ogg');
+        fd.append('producerName', $('something').val());
+        fd.append('beatName', $('somethingElse').val());
+        console.log(blob);
+        $.ajax({
+          method: 'POST',
+          url: '/create',
+          data: fd,
+          processData: false,
+          contentType: false,
+        }).done(location.reload());
+      };
+    }, 10000);
   });
 
   $('#start').on('click', (e) => {
