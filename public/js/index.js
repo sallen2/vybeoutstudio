@@ -332,6 +332,7 @@ $(document).ready(() => {
   });
 
   $('#modalButton').on('click', (e) => {
+    $('.modal').modal();
     $('#modal1').modal('open');
   });
 
