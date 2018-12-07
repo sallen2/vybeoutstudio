@@ -39,13 +39,20 @@ $(document).ready(() => {
 
 
     $('#plusbtn').on('click', () => {
-      i++;
-      i++;
-      if (i === 10) {
-        i = 0;
+      if($("#plusbtn").hasClass("talib")) {
+          $('.dropdown-menu').hide();
+          $("#plusbtn").removeClass("talib");
       }
+      else {
+          i++;
+          i++;
+          if (i === 10) {
+              i = 0;
+          }
 
       $('.dropdown-menu').show();
+      $("#plusbtn").addClass("talib");
+      }
     });
 
 
