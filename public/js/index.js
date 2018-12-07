@@ -304,10 +304,12 @@ $(document).ready(() => {
 
   // Metronome
   const player = new Tone.Player('../sounds/metro_beat.wav').toMaster();
+  const player2 = new Tone.Player('/audio/71224a36108cd6e29455a7759429ff55.ogg').toMaster();
 
   function start(bool) {
     Tone.Transport.scheduleRepeat((time) => {
       player.start();
+      player2.start();
     }, '4n');
     Tone.Transport.loop = bool;
     Tone.Transport.setLoopPoints(0, '2m');
