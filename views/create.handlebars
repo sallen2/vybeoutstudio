@@ -1,22 +1,22 @@
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+    <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
     </div>
-
-  </div>
 </div>
 
 <div class="container-fluid">
@@ -24,49 +24,49 @@
     <div class="row dropdown">
 
         <button id="record"><svg height="100" width="100">
-            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
-        </svg><br>record</button>
-<div class="col-md-3">
-        <button id="plusbtn" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            <svg width="100" height="100" class="icon  icon--plus" viewBox="0 0 5 5" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z"></path>
-            </svg>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" id="drumKit" href="#">DrumKit</a>
-            <a class="dropdown-item" id='piano' href="#">piano</a>
-            <a class="dropdown-item" id='pluck' href="#">pluck</a>
-            <a class="dropdown-item" id='synth' href="#">synth</a>
-            <a class="dropdown-item" id='trumpets' href="#">trumpets</a>
-            <a class="dropdown-item" id='flute' href="#">flute</a>
-            <a class="dropdown-item" id='sax' href="#">sax</a>
-        </div>
-</div>
-    <form action="#">
-        <div class="input-group">
-            <select id='grid' class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                <option selected>Choose...</option>
-
-                <option value="@4n">4</option>
-                <option value="@8n">8</option>
-                <option value="@16n">16</option>
-                <option value="@32n">32</option>
-            </select>
-            <div class="input-group-append">
-                <button id='confirm' class="btn btn-outline-secondary" type="button">quantize</button>
+                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+            </svg><br>record</button>
+        <div class="col-md-3">
+            <button id="plusbtn" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <svg width="100" height="100" class="icon  icon--plus" viewBox="0 0 5 5" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z"></path>
+                </svg>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" id="drumKit" href="#">DrumKit</a>
+                <a class="dropdown-item" id='piano' href="#">piano</a>
+                <a class="dropdown-item" id='pluck' href="#">pluck</a>
+                <a class="dropdown-item" id='synth' href="#">synth</a>
+                <a class="dropdown-item" id='trumpets' href="#">trumpets</a>
+                <a class="dropdown-item" id='flute' href="#">flute</a>
+                <a class="dropdown-item" id='sax' href="#">sax</a>
             </div>
         </div>
-    </form>
+        <form action="#">
+            <div class="input-group">
+                <select id='grid' class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                    <option selected>Choose...</option>
 
-<button data-target="modal1" class="btn modal-trigger">Modal</button>
+                    <option value="@4n">4</option>
+                    <option value="@8n">8</option>
+                    <option value="@16n">16</option>
+                    <option value="@32n">32</option>
+                </select>
+                <div class="input-group-append">
+                    <button id='confirm' class="btn btn-outline-secondary" type="button">quantize</button>
+                </div>
+            </div>
+        </form>
 
-    <div>
-        <input id="bpm" type="range" min="50" max="200" step="1" value="120">
-        <button id="start">Start</button>
-        <button id="stop">Stop</button>
+        <button data-target="modal1" class="btn modal-trigger">Modal</button>
 
-    </div>
+        <div>
+            <input id="bpm" type="range" min="50" max="200" step="1" value="120">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+
+        </div>
 
         <h3>Tempo: <span id="tempo">120</span></h3>
         <h6 class="text-right">use the arrow in the bottom right corner of each instrument to customize your dashboard!</h6>
@@ -84,14 +84,15 @@
 
 </div>
 
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content" id="testing">
+        <h4 class="black-text">SHARE</h4>
+        <p class="black-text">Producer Name</p>
+        <p class="black-text">Beat Name</p>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat modal-footer" id="testing">Agree</a>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
+</div>

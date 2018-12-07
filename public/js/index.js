@@ -63,7 +63,7 @@ $(document).ready(() => {
           <button id="drums" class="instbtn">drums</button>
           </div>
               </div>`),
-          node.x, node.y, node.width, node.height);
+            node.x, node.y, node.width, node.height);
         }, this);
       });
       $('.dropdown-menu').hide();
@@ -83,7 +83,7 @@ $(document).ready(() => {
           <button id="piano" class="instbtn">piano</button>
           </div>
               </div>`),
-          node.x, node.y, node.width, node.height);
+            node.x, node.y, node.width, node.height);
         }, this);
       });
       $('.dropdown-menu').hide();
@@ -103,7 +103,7 @@ $(document).ready(() => {
           <button id="pluck" class="instbtn">pluck</button>
           </div>
               </div>`),
-          node.x, node.y, node.width, node.height);
+            node.x, node.y, node.width, node.height);
         }, this);
       });
       $('.dropdown-menu').hide();
@@ -123,7 +123,7 @@ $(document).ready(() => {
           <button id="synth" class="instbtn">synth</button>
           </div>
               </div>`),
-          node.x, node.y, node.width, node.height);
+            node.x, node.y, node.width, node.height);
         }, this);
       });
       $('.dropdown-menu').hide();
@@ -143,7 +143,7 @@ $(document).ready(() => {
           <button id="flute" class="instbtn">flute</button>
           </div>
               </div>`),
-          node.x, node.y, node.width, node.height);
+            node.x, node.y, node.width, node.height);
         }, this);
       });
       $('.dropdown-menu').hide();
@@ -163,7 +163,7 @@ $(document).ready(() => {
           <button id="sax" class="instbtn">sax</button>
           </div>
               </div>`),
-          node.x, node.y, node.width, node.height);
+            node.x, node.y, node.width, node.height);
         }, this);
       });
       $('.dropdown-menu').hide();
@@ -183,7 +183,7 @@ $(document).ready(() => {
           <button id="trumpet" class="instbtn">trumpet</button>
           </div>
               </div>`),
-          node.x, node.y, node.width, node.height);
+            node.x, node.y, node.width, node.height);
         }, this);
       });
       $('.dropdown-menu').hide();
@@ -391,8 +391,8 @@ $(document).ready(() => {
       F4: '../sounds/808.wav',
       E4: '../sounds/FX_VoxBobby_Wet.wav',
     }, {
-      release: 1,
-    });
+        release: 1,
+      });
     ins.connect(dest);
     ins.toMaster();
     const drums = {
@@ -408,8 +408,8 @@ $(document).ready(() => {
     const ins = new Tone.Sampler({
       C4: '../sounds/piano.wav',
     }, {
-      release: 1,
-    });
+        release: 1,
+      });
     ins.connect(dest);
     ins.toMaster();
     const piano = {
@@ -425,8 +425,8 @@ $(document).ready(() => {
     const ins = new Tone.Sampler({
       C4: '../sounds/flute_1.wav',
     }, {
-      release: 1,
-    });
+        release: 1,
+      });
     ins.connect(dest);
     ins.toMaster();
     const flute = {
@@ -442,8 +442,8 @@ $(document).ready(() => {
     const ins = new Tone.Sampler({
       C4: '../sounds/sax_1.wav',
     }, {
-      release: 1,
-    });
+        release: 1,
+      });
     ins.connect(dest);
     ins.toMaster();
     const sax = {
@@ -459,8 +459,8 @@ $(document).ready(() => {
     const ins = new Tone.Sampler({
       C4: '../sounds/trumpet_1.wav',
     }, {
-      release: 1,
-    });
+        release: 1,
+      });
     ins.connect(dest);
     ins.toMaster();
     const trumpet = {
@@ -476,8 +476,8 @@ $(document).ready(() => {
     const ins = new Tone.Sampler({
       C4: '../sounds/pluck.wav',
     }, {
-      release: 1,
-    });
+        release: 1,
+      });
     ins.connect(dest);
     ins.toMaster();
     const pluck = {
@@ -488,4 +488,7 @@ $(document).ready(() => {
     onKeyDown(pluck);
     onKeyUp(pluck);
   });
+
+  $('#modal1').modal();
+
 });
