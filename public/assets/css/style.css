@@ -1,6 +1,7 @@
 body, nav{
     background-color: #011627;
     font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     /* box-shadow: none; */
 }
 
@@ -83,4 +84,18 @@ li:hover > .navText {
 footer {
     position: absolute;
     bottom: 0;
+}
+
+#shareBox {
+    background-color: #C5EBC3;
+    color: white;
+}
+
+#shareFooter {
+    background-color: #C5EBC3;
+}
+
+#share {
+    color: white;
+    font-weight: bold;
 }

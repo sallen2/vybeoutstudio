@@ -1,22 +1,22 @@
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+    <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
     </div>
-
-  </div>
 </div>
 
 <div class="container-fluid">
@@ -47,16 +47,16 @@
             <select id='grid' class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                 <option selected>Choose...</option>
 
-                <option value="@4n">4</option>
-                <option value="@8n">8</option>
-                <option value="@16n">16</option>
-                <option value="@32n">32</option>
-            </select>
-            <div class="input-group-append">
-                <button id='confirm' class="btn btn-outline-secondary" type="button">quantize</button>
+                    <option value="@4n">4</option>
+                    <option value="@8n">8</option>
+                    <option value="@16n">16</option>
+                    <option value="@32n">32</option>
+                </select>
+                <div class="input-group-append">
+                    <button id='confirm' class="btn btn-outline-secondary" type="button">quantize</button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
 
     <div>
         <input id="bpm" type="range" min="50" max="200" step="1" value="120">
@@ -67,7 +67,7 @@
         </svg><br></button>
         <h5 class="text-right tempotext">Tempo: <span id="tempo">120</span></h5>
 
-    </div>
+        </div>
 
 <div class="col-md-4 hhh12">
         <h6 class="text-right">use the arrow in the bottom right corner of each instrument to customize your dashboard!</h6>
@@ -82,6 +82,18 @@
 
 </div>
 
-<div>
-    <button id="share">Share</button>
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" href="#modal1" id="share">SHARE</a>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content" id="shareBox">
+        {{!-- <form action="">
+            
+        </form> --}}
+        <h4 class="black-text">SHARE</h4>
+        <p class="black-text">Producer Name</p>
+        <p class="black-text">Beat Name</p>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat modal-footer" id="shareFooter">Agree</a>
+    </div>
 </div>
