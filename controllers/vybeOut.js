@@ -38,6 +38,8 @@ const storage = new GridFsStorage({
 const upload = multer({ storage });
 const router = express.Router();
 
+
+// get
 router.get('/', (req, res) => {
   res.render('home');
 });
@@ -60,10 +62,12 @@ router.get('/contribute', (req, res) => {
   });
 });
 
-router.get('/Ccreate', (req, res) => {
+router.get('/ccreate', (req, res) => {
   res.render('createContribute');
 });
 
+
+// post
 router.post('/create', upload.single('audio'), (req, res) => {
   console.log(req.file);
   res.status(201).end();

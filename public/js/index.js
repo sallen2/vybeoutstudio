@@ -311,10 +311,12 @@ $(document).ready(() => {
 
   // Metronome
   const player = new Tone.Player('../sounds/metro_beat.wav').toMaster();
+  const player2 = new Tone.Player('/audio/71224a36108cd6e29455a7759429ff55.ogg').toMaster();
 
   function start(bool) {
     Tone.Transport.scheduleRepeat((time) => {
       player.start();
+      player2.start();
     }, '4n');
     Tone.Transport.loop = bool;
     Tone.Transport.setLoopPoints(0, '2m');
@@ -332,33 +334,29 @@ $(document).ready(() => {
     Tone.Transport.stop();
   }
 
-  $('#save').on('click', (e) => {
+  $('#share').on('click', (e) => {
     start(true);
     recorder.ondataavailable = evt => chunks.push(evt.data);
     recorder.start();
-  });
-
-  $('#modalButton').on('click', (e) => {
-    $('.modal').modal();
-    $('#modal1').modal('open');
-  });
-
-  $('#stopSave').on('click', (e) => {
-    recorder.stop();
-    Tone.Transport.stop();
-    recorder.onstop = (evt) => {
-      const blob = new Blob(chunks, { type: 'audio/ogg; codecs=opus' });
-      const fd = new FormData();
-      fd.append('audio', blob, 'blobby.ogg');
-      console.log(blob);
-      $.ajax({
-        method: 'POST',
-        url: '/create',
-        data: fd,
-        processData: false,
-        contentType: false,
-      }).done(location.reload());
-    };
+    setTimeout(() => {
+      recorder.stop();
+      Tone.Transport.stop();
+      recorder.onstop = (evt) => {
+        const blob = new Blob(chunks, { type: 'audio/ogg; codecs=opus' });
+        const fd = new FormData();
+        fd.append('audio', blob, 'blobby.ogg');
+        fd.append('producerName', $('something').val());
+        fd.append('beatName', $('somethingElse').val());
+        console.log(blob);
+        $.ajax({
+          method: 'POST',
+          url: '/create',
+          data: fd,
+          processData: false,
+          contentType: false,
+        }).done(location.reload());
+      };
+    }, 10000);
   });
 
   $('#start').on('click', (e) => {
