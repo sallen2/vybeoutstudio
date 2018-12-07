@@ -1,5 +1,6 @@
 #plusbtn {
-    background-color: #30332e;
+    background-color: #011627;
+    border-color: #011627;
 }
 
 svg {
@@ -105,13 +106,14 @@ button:focus {
 
 .input-group {
     width:15%;
+    margin-top: 5px;
 }
 #record:focus {
-    background-color: #FFF3e0;
-    color: #000000;
 }
 #record{
     height:108px;
+    background-color: #011627;
+    border-color: #011627;
 }
 #bpm {
     width:350px;
@@ -138,3 +140,24 @@ h5 {
 h6 {
     color: greenyellow;
 }
+#starts {
+    background-color: #011627;
+    border-color: #011627;
+    height: 50px;
+    width: 50px;
+    margin-top: -10px;
+}
+
+.fas {
+    z-index:4;
+    color: #C5EBC3;
+
+}
+.tempotext {
+    margin-top:-45px;
+}
+.hhh12 {
+    margin-left: 27px;
+    margin-right: 0;
+}
+
