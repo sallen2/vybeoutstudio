@@ -111,7 +111,7 @@ button:focus {
 #record:focus {
 }
 #record{
-    height:108px;
+
     background-color: #011627;
     border-color: #011627;
 }
@@ -140,7 +140,7 @@ h5 {
 h6 {
     color: greenyellow;
 }
-#starts {
+#start, #stop {
     background-color: #011627;
     border-color: #011627;
     height: 50px;
@@ -149,10 +149,10 @@ h6 {
 }
 
 .fas {
-    z-index:4;
-    color: #C5EBC3;
-
+    background-color:011627;
+    color:#C5EBC3;
 }
+
 .tempotext {
     margin-top:-45px;
 }
