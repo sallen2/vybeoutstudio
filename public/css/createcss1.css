@@ -111,7 +111,7 @@ button:focus {
 #record:focus {
 }
 #record{
-
+    margin-top: -5px;
     background-color: #011627;
     border-color: #011627;
 }
