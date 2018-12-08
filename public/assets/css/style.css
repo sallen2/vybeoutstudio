@@ -5,6 +5,10 @@ body, nav{
     /* box-shadow: none; */
 }
 
+a:hover, a:active, a:visited, a:link {
+    text-decoration: none;
+}
+
 .myVidContainer {
     position: fixed;
     top: 0;
