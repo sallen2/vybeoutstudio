@@ -4,11 +4,22 @@ body, nav{
     font-weight: bold;
     /* box-shadow: none; */
 }
+.audioStyle{
+    margin-left: 15%;
+    color: #011627;
+}
 
+<<<<<<< HEAD
 a:hover, a:active, a:visited, a:link {
     text-decoration: none;
 }
 
+=======
+.buttonText{
+ background-color: #fff3E0;
+ color: #011627;
+}
+>>>>>>> 8f247af1ea889733b7e23e6f94e923c27126031e
 .myVidContainer {
     position: fixed;
     top: 0;
@@ -34,7 +45,7 @@ ul > li {
 
 li:hover {
     /* transition: background-color 2s; */
-    background-color: #C5EBC3;
+    background-color: #fff3E0;
     box-shadow: none; 
 }
 
@@ -44,6 +55,10 @@ li:hover > .navText {
 
 .navText {
     color: #fff3E0;
+}
+
+.cardMiddle{
+    margin: auto;
 }
 
 /* main {

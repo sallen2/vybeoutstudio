@@ -112,8 +112,11 @@ button:focus {
 }
 #record{
     margin-top: -5px;
+    height: 45px;
+    width: 45px;
     background-color: #011627;
     border-color: #011627;
+    position: absolute;
 }
 #bpm {
     width:350px;
@@ -150,7 +153,7 @@ h6 {
 
 .fas {
     background-color:011627;
-    color:#C5EBC3;
+    color:#fff3E0;
 }
 
 .tempotext {

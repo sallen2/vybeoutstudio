@@ -1,51 +1,35 @@
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
-            </div>
-            <div class="modal-body">
-                <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
+<script src="../js/Tone.js"></script>
+<script src="../js/index.js"></script>
 <div class="container-fluid">
 
     <div class="row dropdown">
 
-        
-<div class="col-md-2">
-        <button id="plusbtn" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            <svg id="plusvg" width="100" height="100" class="icon  icon--plus" viewBox="0 0 5 5" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z"></path>
-            </svg>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" id="drumKit" href="#">DrumKit</a>
-            <a class="dropdown-item" id='piano' href="#">piano</a>
-            <a class="dropdown-item" id='pluck' href="#">pluck</a>
-            <a class="dropdown-item" id='synth' href="#">synth</a>
-            <a class="dropdown-item" id='trumpets' href="#">trumpets</a>
-            <a class="dropdown-item" id='flute' href="#">flute</a>
-            <a class="dropdown-item" id='sax' href="#">sax</a>
-        </div>
-</div>
 
-    <form action="#">
-        <div class="input-group">
-            <select id='grid' class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                <option selected>Choose...</option>
+        <div class="col-md-2">
+            <button id="plusbtn" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <svg id="plusvg" width="100" height="100" class="icon  icon--plus" viewBox="0 0 5 5" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z"></path>
+                </svg>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" id="drumKit" href="#">DrumKit</a>
+                <a class="dropdown-item" id='piano' href="#">piano</a>
+                <a class="dropdown-item" id='pluck' href="#">pluck</a>
+                <a class="dropdown-item" id='synth' href="#">synth</a>
+                <a class="dropdown-item" id='trumpets' href="#">trumpets</a>
+                <a class="dropdown-item" id='flute' href="#">flute</a>
+                <a class="dropdown-item" id='sax' href="#">sax</a>
+                <a class="dropdown-item" id='userSelect1' href="#">User sound 1</a>
+                <a class="dropdown-item" id='userSelect2' href="#">User sound 2</a>
+                <a class="dropdown-item" id='userSelect3' href="#">User sound 3</a>
+            </div>
+        </div>
+
+        <form action="#">
+            <div class="input-group">
+                <select id='grid' id="inputGroupSelect04" aria-label="Example select with button addon">
+                    <option selected>Choose...</option>
 
                     <option value="@4n">4</option>
                     <option value="@8n">8</option>
@@ -53,7 +37,7 @@
                     <option value="@32n">32</option>
                 </select>
                 <div class="input-group-append">
-                    <button id='confirm' class="btn btn-outline-secondary" type="button">quantize</button>
+                    <button id='confirm' class="btn btn-outline-secondary buttonText" type="button">quantize</button>
                 </div>
             </div>
         </form>
@@ -63,16 +47,18 @@
         <button id="start"><i class="fas fa-play-circle fa-2x"></i></button>
         <button id="stop"><i class="fas fa-stop-circle fa-2x"></i></button>
         <button id="record"><svg height="40" width="40">
-            <circle cx="25" cy="10" r="15" stroke="black" stroke-width="0" fill="red" />
+            <circle cx="20" cy="18" r="15" stroke="black" stroke-width="0" fill="red" />
         </svg><br></button>
         <h5 class="text-right tempotext">Tempo: <span id="tempo">120</span></h5>
 
         </div>
 
-<div class="col-md-4 hhh12">
-        <h6 class="text-right">use the arrow in the bottom right corner of each instrument to customize your dashboard!</h6>
-        <h5><strong>Use the Z and X keys to change the octave of each instrument! </strong></h5>
-    </div></div>
+        <div class="col-md-4 hhh12">
+            <h6 class="text-right">use the arrow in the bottom right corner of each instrument to customize your
+                dashboard!</h6>
+            <h5><strong>Use the Z and X keys to change the octave of each instrument! </strong></h5>
+        </div>
+    </div>
 </div>
 
 <div class="container-fluid">
@@ -83,17 +69,31 @@
 </div>
 
 <!-- Modal Trigger -->
-<a class="waves-effect waves-light btn modal-trigger" href="#modal1" id="share">SHARE</a>
+<a class="waves-effect waves-light btn modal-trigger buttonText" href="#modal1" id="shareStop">SHARE</a>
 
 <!-- Modal Structure -->
-<div id="modal1" class="modal bottom-sheet">
-    <div class="modal-content" id="shareBox">
-        {{!-- <form action="">
-            
-        </form> --}}
-        <h4 class="black-text">SHARE</h4>
-        <p class="black-text">Producer Name</p>
-        <p class="black-text">Beat Name</p>
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat modal-footer" id="shareFooter">Agree</a>
-    </div>
+<div id="modal1" style="background-color: #fff3E0" class="modal bottom-sheet">
+    <h4 class="black-text">SHARE SONG</h4>
+    <form action="#">
+        <div style="background-color: #fff3E0" class="modal-content" id="shareBox">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="producer" type="text" class="validate">
+                    <label style="color: #011627" class="active" for="first_name2">Producer Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="beatName" type="text" class="validate">
+                    <label style="color: #011627" class="active" for="first_name2">Beat Name</label>
+                </div>
+                <div style="color: #ff0000;" class="input-field col s12">
+                    <select id="contrib">
+                        <option value="" disabled selected>Can people Contribute</option>
+                        <option value="true">YES</option>
+                        <option value="false">NO</option>
+                    </select>
+                </div>
+            </div>
+            <a href="#!" style="background-color: #fff3E0; color: #011627;" class="modal-close waves-effect btn-flat modal-footer share" id="shareFooter">Share</a>
+        </div>
+    </form>
 </div>
