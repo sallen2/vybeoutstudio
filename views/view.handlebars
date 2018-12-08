@@ -1,3 +1,4 @@
+{{!-- Stephan's Style --}}
 {{!-- <h1 class="navText">View Page!</h1>
 {{#each vybeBeats }}
 <div class="col s6 m4 cardMiddle" class='cardMiddle' style="width: 500px">
@@ -10,11 +11,12 @@
     </div>
 </div>
 {{/each}} --}}
+
 <main>
     <div class="row">
         {{!-- <h1 class="navText">View Page!</h1> --}}
         {{#each vybeBeats }}
-        <div class="col s6 m4 cardMiddle" class='cardMiddle' style="min-width: 300px; max-width: 400px">
+        <div class="col s6 m4 cardMiddle" class='cardMiddle' style="min-width: 300px; max-width: 550px">
             <div class="card horizontal" style=" background-color: #fff3E0;">
                 <h5 class="audioStyle">Producer: {{Author}}</h5>
                 <p class="audioStyle">Beat Name: {{BeatName}}</p>
@@ -26,3 +28,9 @@
         {{/each}}
     </div>
 </main>
+
+<footer>
+    <div class="footer-copyright navText">
+        © 2018 Vybe Out Studio
+    </div>
+</footer>
