@@ -64,7 +64,7 @@ router.get('/contribute', (req, res) => {
 // POST Route
 router.post('/create', upload.single('audio'), (req, res) => {
   VybeOut.create({
-    Author: req.body.producerName, BeatName: req.body.beatName, Beat: req.file.filename, Contribute: req.body.contribute,
+    Author: req.body.producerName, BeatName: req.body.beatName, Beat: req.file.filename, Contribute: req.body.contribute, Tempo: req.body.tempo,
   });
   res.status(201).end();
 });

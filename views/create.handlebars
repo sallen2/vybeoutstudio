@@ -20,6 +20,9 @@
                 <a class="dropdown-item" id='trumpets' href="#">trumpets</a>
                 <a class="dropdown-item" id='flute' href="#">flute</a>
                 <a class="dropdown-item" id='sax' href="#">sax</a>
+                <a class="dropdown-item" id='userSelect1' href="#">User sound 1</a>
+                <a class="dropdown-item" id='userSelect2' href="#">User sound 2</a>
+                <a class="dropdown-item" id='userSelect3' href="#">User sound 3</a>
             </div>
         </div>
 
@@ -34,7 +37,7 @@
                     <option value="@32n">32</option>
                 </select>
                 <div class="input-group-append">
-                    <button id='confirm' class="btn btn-outline-secondary" type="button">quantize</button>
+                    <button id='confirm' class="btn btn-outline-secondary buttonText" type="button">quantize</button>
                 </div>
             </div>
         </form>
@@ -46,7 +49,7 @@
             <button id="record"><svg height="40" width="40">
                     <circle cx="25" cy="10" r="15" stroke="black" stroke-width="0" fill="red" />
                 </svg><br></button>
-            <h5 class="text-right tempotext">Tempo: <span id="tempo">120</span></h5>
+            <h5 class="text-right tempotext">Tempo: <span id="tempo"></span></h5>
 
         </div>
 
@@ -66,23 +69,23 @@
 </div>
 
 <!-- Modal Trigger -->
-<a class="waves-effect waves-light btn modal-trigger" href="#modal1" id="shareStop">SHARE</a>
-<button id="thisisatest">test</button>
+<a class="waves-effect waves-light btn modal-trigger buttonText" href="#modal1" id="shareStop">SHARE</a>
+
 <!-- Modal Structure -->
-<div id="modal1" class="modal bottom-sheet">
+<div id="modal1" style="background-color: #fff3E0" class="modal bottom-sheet">
     <h4 class="black-text">SHARE SONG</h4>
     <form action="#">
-        <div class="modal-content" id="shareBox">
+        <div style="background-color: #fff3E0" class="modal-content" id="shareBox">
             <div class="row">
                 <div class="input-field col s12">
                     <input id="producer" type="text" class="validate">
-                    <label class="active" for="first_name2">Producer Name</label>
+                    <label style="color: #011627" class="active" for="first_name2">Producer Name</label>
                 </div>
                 <div class="input-field col s12">
                     <input id="beatName" type="text" class="validate">
-                    <label class="active" for="first_name2">Beat Name</label>
+                    <label style="color: #011627" class="active" for="first_name2">Beat Name</label>
                 </div>
-                <div class="input-field col s12">
+                <div style="color: #ff0000;" class="input-field col s12">
                     <select id="contrib">
                         <option value="" disabled selected>Can people Contribute</option>
                         <option value="true">YES</option>
@@ -90,7 +93,7 @@
                     </select>
                 </div>
             </div>
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat modal-footer share" id="shareFooter">Share</a>
+            <a href="#!" style="background-color: #fff3E0; color: #011627;" class="modal-close waves-effect btn-flat modal-footer share" id="shareFooter">Share</a>
         </div>
     </form>
 </div>

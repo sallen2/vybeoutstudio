@@ -1,5 +1,11 @@
 $(document).ready(() => {
-  Tone.Transport.bpm.value = 120;
+  $(window).unload(function () {
+    localStorage.clear();
+  });
+
+  Tone.Transport.bpm.value = localStorage.getItem('Tempo') || 120;
+
+  $('#tempo').text(`${Tone.Transport.bpm.value}`);
   Tone.context.latencyHint = 'fastest';
   let octave = 4;
   let record = false;
@@ -194,6 +200,66 @@ $(document).ready(() => {
       });
       $('.dropdown-menu').hide();
     });
+
+    $('#userSelect1').on('click', () => {
+      items.push({
+        x: i, y: 0, width: 2, height: 1,
+      });
+      items.shift();
+
+      $('.grid-stack').append(function addinst() {
+        const grid = $(this).data('gridstack');
+        _.each(items, (node) => {
+          grid.addWidget($(`<div>
+          <div class="grid-stack-item-content">
+          <button id="userSound1" class="instbtn">User Sound 1</button>
+          </div>
+              </div>`),
+          node.x, node.y, node.width, node.height);
+        }, this);
+      });
+      $('.dropdown-menu').hide();
+    });
+
+    $('#userSelect2').on('click', () => {
+      items.push({
+        x: i, y: 0, width: 2, height: 1,
+      });
+      items.shift();
+
+      $('.grid-stack').append(function addinst() {
+        const grid = $(this).data('gridstack');
+        _.each(items, (node) => {
+          grid.addWidget($(`<div>
+          <div class="grid-stack-item-content">
+          <button id="userSound1" class="instbtn">User Sound 2</button>
+          </div>
+              </div>`),
+          node.x, node.y, node.width, node.height);
+        }, this);
+      });
+      $('.dropdown-menu').hide();
+    });
+
+    $('#userSelect3').on('click', () => {
+      items.push({
+        x: i, y: 0, width: 2, height: 1,
+      });
+      items.shift();
+
+      $('.grid-stack').append(function addinst() {
+        const grid = $(this).data('gridstack');
+        _.each(items, (node) => {
+          grid.addWidget($(`<div>
+          <div class="grid-stack-item-content">
+          <button id="userSound1" class="instbtn">User Sound 3</button>
+          </div>
+              </div>`),
+          node.x, node.y, node.width, node.height);
+        }, this);
+      });
+      $('.dropdown-menu').hide();
+    });
   });
 
   const Instruments = {
@@ -321,7 +387,7 @@ $(document).ready(() => {
       Tone.Transport.start('+0.1', '1:2:4.999');
     } else {
       const player2 = new Tone.Player(`/audio/${localStorage.getItem('Beat')}`, (() => {
-        Tone.Transport.start('+0.1', '1:2:4.999');
+        Tone.Transport.start();
       })).sync().toMaster();
       player2.connect(dest);
       player2.start();
@@ -351,8 +417,7 @@ $(document).ready(() => {
   });
 
   $('.share').on('click', (e) => {
-    Tone.Transport.loop = false;
-    Tone.Transport.start();
+    Tone.Transport.start('+0.1', '1:2:4.999');
     recorder.ondataavailable = evt => chunks.push(evt.data);
     recorder.start();
     setTimeout(() => {
@@ -365,6 +430,7 @@ $(document).ready(() => {
         fd.append('producerName', $('#producer').val());
         fd.append('beatName', $('#beatName').val());
         fd.append('contribute', $('#contrib').val());
+        fd.append('tempo', $('#tempo').text());
         $.ajax({
           method: 'POST',
           url: '/create',
@@ -372,7 +438,6 @@ $(document).ready(() => {
           processData: false,
           contentType: false,
         }).done(location.reload());
-        localStorage.clear();
       };
     }, 10000);
   });
@@ -412,6 +477,10 @@ $(document).ready(() => {
       D4: '../sounds/LL_snare_pyrex.wav',
       F4: '../sounds/808.wav',
       E4: '../sounds/FX_VoxBobby_Wet.wav',
+      G4: '../sounds/applause_y.wav',
+      A4: '../sounds/boing2.wav',
+      B4: '../sounds/38[kb]avenger-horn.wav.mp3',
+      C5: '../sounds/38[kb]avenger-horn.wav.mp3',
     }, {
       release: 1,
     });
@@ -511,6 +580,11 @@ $(document).ready(() => {
     onKeyUp(pluck);
   });
 
+
+  $('.userButton').on('click', function (e) {
+    e.preventDefault();
+    console.log($('.userButton').val());
+  });
   $('#modal1').modal();
   $('select').formSelect();
 });

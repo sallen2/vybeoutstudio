@@ -1,8 +1,12 @@
-<h1>View Page!</h1>
+<h1 class="navText">View Page!</h1>
 {{#each vybeBeats }}
-<h4>{{Author}}</h4>
-<p>{{BeatName}}</p>
-<audio controls loop>
-     <source src="/audio/{{Beat}}" type="audio/ogg">
-</audio>
+<div class="col s6 m4 cardMiddle" class='cardMiddle' style="width: 500px">
+    <div class="card horizontal" style=" background-color: #fff3E0;">
+        <h4 class="audioStyle">Producer: {{Author}}</h4>
+        <p class="audioStyle">Beat Name: {{BeatName}}</p>
+        <audio style="margin-left: 15%" controls loop>
+            <source src="/audio/{{Beat}}" type="audio/ogg">
+        </audio>
+    </div>
+</div>
 {{/each}}

@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
   Author: String,
   BeatName: String,
   Beat: String,
+  Tempo: String,
   Contribute: Boolean,
 });
 
