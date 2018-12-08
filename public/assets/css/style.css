@@ -4,7 +4,15 @@ body, nav{
     font-weight: bold;
     /* box-shadow: none; */
 }
+.audioStyle{
+    margin-left: 15%;
+    color: #011627;
+}
 
+.buttonText{
+ background-color: #fff3E0;
+ color: #011627;
+}
 .myVidContainer {
     position: fixed;
     top: 0;
@@ -30,7 +38,7 @@ ul > li {
 
 li:hover {
     /* transition: background-color 2s; */
-    background-color: #C5EBC3;
+    background-color: #fff3E0;
     box-shadow: none; 
 }
 
@@ -40,6 +48,10 @@ li:hover > .navText {
 
 .navText {
     color: #fff3E0;
+}
+
+.cardMiddle{
+    margin: auto;
 }
 
 /* main {
