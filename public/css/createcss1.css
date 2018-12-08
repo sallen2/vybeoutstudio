@@ -152,7 +152,7 @@ h6 {
 }
 
 .fas {
-    background-color:011627;
+    background-color:#011627;
     color:#fff3E0;
 }
 
@@ -163,4 +163,10 @@ h6 {
     margin-left: 27px;
     margin-right: 0;
 }
-
+#shareStop{
+    color:black;
+    font-weight: bolder;
+}
+.black-text{
+    font-weight: bolder;
+}

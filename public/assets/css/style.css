@@ -113,20 +113,40 @@ li:hover > .navText {
 }
 
 footer {
-    position: absolute;
+    text-align: right;
     bottom: 0;
 }
 
 #shareBox {
     background-color: #C5EBC3;
-    color: white;
+    color: black;
 }
 
 #shareFooter {
     background-color: #C5EBC3;
+    color:black;
 }
 
 #share {
     color: white;
     font-weight: bold;
+}
+.footer-copyright {
+    position: sticky;
+    position: -webkit-sticky;
+    bottom:0;
+    margin-top:55vh;
+}
+
+.footer-copyright3 {
+    position: sticky;
+    position: -webkit-sticky;
+    bottom:0;
+    margin-top:30vh;
+}
+
+.footer-copyright2 {
+    position: sticky;
+    position: -webkit-sticky;
+    bottom:0;
 }
