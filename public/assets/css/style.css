@@ -119,11 +119,12 @@ footer {
 
 #shareBox {
     background-color: #C5EBC3;
-    color: white;
+    color: black;
 }
 
 #shareFooter {
     background-color: #C5EBC3;
+    color:black;
 }
 
 #share {
@@ -148,5 +149,4 @@ footer {
     position: sticky;
     position: -webkit-sticky;
     bottom:0;
-
 }
