@@ -1,6 +1,8 @@
 <h1>View Page!</h1>
-{{#each files }}
+{{#each vybeBeats }}
+<h4>{{Author}}</h4>
+<p>{{BeatName}}</p>
 <audio controls loop>
-     <source src="/audio/{{filename}}" type="audio/ogg">
+     <source src="/audio/{{Beat}}" type="audio/ogg">
 </audio>
 {{/each}}

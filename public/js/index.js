@@ -8,7 +8,7 @@ $(document).ready(() => {
   let part;
   let qu = '@32n';
   let prevKey = 0;
-  let save = false;
+  const save = false;
   let theEvent;
   const actx = Tone.context;
   const dest = actx.createMediaStreamDestination();
@@ -69,7 +69,7 @@ $(document).ready(() => {
           <button id="drums" class="instbtn">drums</button>
           </div>
               </div>`),
-            node.x, node.y, node.width, node.height);
+          node.x, node.y, node.width, node.height);
         }, this);
       });
       $('.dropdown-menu').hide();
@@ -89,7 +89,7 @@ $(document).ready(() => {
           <button id="piano" class="instbtn">piano</button>
           </div>
               </div>`),
-            node.x, node.y, node.width, node.height);
+          node.x, node.y, node.width, node.height);
         }, this);
       });
       $('.dropdown-menu').hide();
@@ -109,7 +109,7 @@ $(document).ready(() => {
           <button id="pluck" class="instbtn">pluck</button>
           </div>
               </div>`),
-            node.x, node.y, node.width, node.height);
+          node.x, node.y, node.width, node.height);
         }, this);
       });
       $('.dropdown-menu').hide();
@@ -129,7 +129,7 @@ $(document).ready(() => {
           <button id="synth" class="instbtn">synth</button>
           </div>
               </div>`),
-            node.x, node.y, node.width, node.height);
+          node.x, node.y, node.width, node.height);
         }, this);
       });
       $('.dropdown-menu').hide();
@@ -149,7 +149,7 @@ $(document).ready(() => {
           <button id="flute" class="instbtn">flute</button>
           </div>
               </div>`),
-            node.x, node.y, node.width, node.height);
+          node.x, node.y, node.width, node.height);
         }, this);
       });
       $('.dropdown-menu').hide();
@@ -169,7 +169,7 @@ $(document).ready(() => {
           <button id="sax" class="instbtn">sax</button>
           </div>
               </div>`),
-            node.x, node.y, node.width, node.height);
+          node.x, node.y, node.width, node.height);
         }, this);
       });
       $('.dropdown-menu').hide();
@@ -189,7 +189,7 @@ $(document).ready(() => {
           <button id="trumpet" class="instbtn">trumpet</button>
           </div>
               </div>`),
-            node.x, node.y, node.width, node.height);
+          node.x, node.y, node.width, node.height);
         }, this);
       });
       $('.dropdown-menu').hide();
@@ -310,16 +310,25 @@ $(document).ready(() => {
 
   // Metronome
   const player = new Tone.Player('../sounds/metro_beat.wav').toMaster();
-  const player2 = new Tone.Player('/audio/71224a36108cd6e29455a7759429ff55.ogg').toMaster();
 
   function start(bool) {
-    Tone.Transport.scheduleRepeat((time) => {
-      // player.start();
-      player2.start();
-    }, '4n');
     Tone.Transport.loop = bool;
     Tone.Transport.setLoopPoints(0, '2m');
-    Tone.Transport.start('+0.1', '1:2:4.999');
+    if (localStorage.getItem('Beat') === null) {
+      Tone.Transport.scheduleRepeat((time) => {
+        player.start();
+      }, '4n');
+      Tone.Transport.start('+0.1', '1:2:4.999');
+    } else {
+      const player2 = new Tone.Player(`/audio/${localStorage.getItem('Beat')}`, (() => {
+        Tone.Transport.start('+0.1', '1:2:4.999');
+      })).sync().toMaster();
+      player2.connect(dest);
+      player2.start();
+      Tone.Transport.scheduleRepeat((time) => {
+        player.start();
+      }, '4n');
+    }
   }
 
   document.getElementById('bpm').addEventListener('input', (e) => {
@@ -327,14 +336,23 @@ $(document).ready(() => {
     $('#tempo').text(Tone.Transport.bpm.value = +e.target.value);
   });
 
-
   function stop() {
-    console.log(Tone.TransportTime().toBarsBeatsSixteenths());
     Tone.Transport.stop();
   }
 
-  $('#share').on('click', (e) => {
-    start(true);
+  $(document).on('click', '#contribute', (e) => {
+    const beat = $('#contribute').attr('beat');
+    console.log('click');
+  });
+
+  $('#shareStop').on('click', (e) => {
+    record = false;
+    Tone.Transport.stop();
+  });
+
+  $('.share').on('click', (e) => {
+    Tone.Transport.loop = false;
+    Tone.Transport.start();
     recorder.ondataavailable = evt => chunks.push(evt.data);
     recorder.start();
     setTimeout(() => {
@@ -344,9 +362,9 @@ $(document).ready(() => {
         const blob = new Blob(chunks, { type: 'audio/ogg; codecs=opus' });
         const fd = new FormData();
         fd.append('audio', blob, 'blobby.ogg');
-        fd.append('producerName', $('something').val());
-        fd.append('beatName', $('somethingElse').val());
-        console.log(blob);
+        fd.append('producerName', $('#producer').val());
+        fd.append('beatName', $('#beatName').val());
+        fd.append('contribute', $('#contrib').val());
         $.ajax({
           method: 'POST',
           url: '/create',
@@ -354,6 +372,7 @@ $(document).ready(() => {
           processData: false,
           contentType: false,
         }).done(location.reload());
+        localStorage.clear();
       };
     }, 10000);
   });
@@ -363,7 +382,6 @@ $(document).ready(() => {
   });
 
   $('#stop').on('click', (e) => {
-    save = false;
     stop();
   });
 
@@ -395,8 +413,8 @@ $(document).ready(() => {
       F4: '../sounds/808.wav',
       E4: '../sounds/FX_VoxBobby_Wet.wav',
     }, {
-        release: 1,
-      });
+      release: 1,
+    });
     ins.connect(dest);
     ins.toMaster();
     const drums = {
@@ -412,8 +430,8 @@ $(document).ready(() => {
     const ins = new Tone.Sampler({
       C4: '../sounds/piano.wav',
     }, {
-        release: 1,
-      });
+      release: 1,
+    });
     ins.connect(dest);
     ins.toMaster();
     const piano = {
@@ -429,8 +447,8 @@ $(document).ready(() => {
     const ins = new Tone.Sampler({
       C4: '../sounds/flute_1.wav',
     }, {
-        release: 1,
-      });
+      release: 1,
+    });
     ins.connect(dest);
     ins.toMaster();
     const flute = {
@@ -446,8 +464,8 @@ $(document).ready(() => {
     const ins = new Tone.Sampler({
       C4: '../sounds/sax_1.wav',
     }, {
-        release: 1,
-      });
+      release: 1,
+    });
     ins.connect(dest);
     ins.toMaster();
     const sax = {
@@ -463,8 +481,8 @@ $(document).ready(() => {
     const ins = new Tone.Sampler({
       C4: '../sounds/trumpet_1.wav',
     }, {
-        release: 1,
-      });
+      release: 1,
+    });
     ins.connect(dest);
     ins.toMaster();
     const trumpet = {
@@ -480,8 +498,8 @@ $(document).ready(() => {
     const ins = new Tone.Sampler({
       C4: '../sounds/pluck.wav',
     }, {
-        release: 1,
-      });
+      release: 1,
+    });
     ins.connect(dest);
     ins.toMaster();
     const pluck = {
@@ -494,5 +512,5 @@ $(document).ready(() => {
   });
 
   $('#modal1').modal();
-
+  $('select').formSelect();
 });

@@ -1,5 +1,12 @@
-{{#each files}}
-    {{!-- {{#if contribute }} --}}
-    <audio controls loop src="/audio/{{filename}}"></audio>
-    {{!-- {{/if}} --}}
+<script src="../js/contribute.js"></script>
+{{#each vybeBeats}}
+{{#if Contribute }}
+<h4>{{Author}}</h4>
+<p>{{BeatName}}</p>
+<audio controls loop>
+    <source src="/audio/{{Beat}}" type="audio/ogg">
+</audio>
+<a href="/create" producer='{{BeatName}}' beat='{{Beat}}' class='waves-effect waves-light btn'>Contribute</a>
+{{/if}}
 {{/each}}
+

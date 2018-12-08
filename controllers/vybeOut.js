@@ -5,12 +5,11 @@ const crypto = require('crypto');
 const mongoose = require('mongoose');
 const GridFsStorage = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');
-
-const mongodbURI = 'mongodb://sallen20:a12345@ds251287.mlab.com:51287/vybeout';
-
-const conn = mongoose.createConnection(mongodbURI);
+const VybeOut = require('../models/vybeOut');
+const mongodbURI = require('../config/config');
 
 // gridfs stream init
+const conn = mongoose.createConnection(mongodbURI);
 let gfs;
 conn.once('open', () => {
   gfs = Grid(conn.db, mongoose.mongo);
@@ -39,15 +38,15 @@ const upload = multer({ storage });
 const router = express.Router();
 
 
-// get
+// GET Routes
 router.get('/', (req, res) => {
   res.render('home');
 });
 
 router.get('/view', (req, res) => {
-  gfs.files.find().toArray((err, files) => {
+  VybeOut.find((err, vybeBeats) => {
     if (err) throw new Error('Something went wrong');
-    res.render('view', { files });
+    res.render('view', { vybeBeats });
   });
 });
 
@@ -56,20 +55,17 @@ router.get('/create', (req, res) => {
 });
 
 router.get('/contribute', (req, res) => {
-  gfs.files.find().toArray((err, files) => {
+  VybeOut.find((err, vybeBeats) => {
     if (err) throw new Error('Something went wrong');
-    res.render('contribute', { files });
+    res.render('contribute', { vybeBeats });
   });
 });
 
-router.get('/ccreate', (req, res) => {
-  res.render('createContribute');
-});
-
-
-// post
+// POST Route
 router.post('/create', upload.single('audio'), (req, res) => {
-  console.log(req.file);
+  VybeOut.create({
+    Author: req.body.producerName, BeatName: req.body.beatName, Beat: req.file.filename, Contribute: req.body.contribute,
+  });
   res.status(201).end();
 });
 
