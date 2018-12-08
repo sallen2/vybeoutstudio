@@ -163,4 +163,7 @@ h6 {
     margin-left: 27px;
     margin-right: 0;
 }
-
+#shareStop{
+    color:black;
+    font-weight: bolder;
+}
