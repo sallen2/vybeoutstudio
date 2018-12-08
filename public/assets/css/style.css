@@ -90,11 +90,26 @@ li:hover > .navText {
 }
 
 .mainText {
-    color: #fff3E0;
+    color: #C5EBC3;
 }
 
 .mainBoxes:hover > .mainText {
     color: black;
+}
+
+.mainBoxes:hover > .mainText > .bodyText {
+    color: black;
+}
+
+.cardHeaderText {
+    font-size: 2em;
+}
+
+.bodyText {
+    padding-top: 10%;
+    font-size: 1.5em;
+    text-align: center;
+    color: #C5EBC3;
 }
 
 footer {
