@@ -9,10 +9,17 @@ body, nav{
     color: #011627;
 }
 
+<<<<<<< HEAD
+a:hover, a:active, a:visited, a:link {
+    text-decoration: none;
+}
+
+=======
 .buttonText{
  background-color: #fff3E0;
  color: #011627;
 }
+>>>>>>> 8f247af1ea889733b7e23e6f94e923c27126031e
 .myVidContainer {
     position: fixed;
     top: 0;
