@@ -480,7 +480,7 @@ $(document).ready(() => {
       G4: '../sounds/808.wav',
       A4: '../sounds/808.wav',
       B4: '../sounds/38[kb]avenger-horn.wav.mp3',
-      C5: '../sounds/808.wav',
+      C5: '../sounds/38[kb]avenger-horn.wav.mp3',
     }, {
       release: 1,
     });
