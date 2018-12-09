@@ -477,8 +477,8 @@ $(document).ready(() => {
       D4: '../sounds/LL_snare_pyrex.wav',
       F4: '../sounds/808.wav',
       E4: '../sounds/FX_VoxBobby_Wet.wav',
-      G4: '../sounds/applause_y.wav',
-      A4: '../sounds/boing2.wav',
+      G4: '../sounds/808.wav',
+      A4: '../sounds/808.wav',
       B4: '../sounds/38[kb]avenger-horn.wav.mp3',
       C5: '../sounds/38[kb]avenger-horn.wav.mp3',
     }, {
