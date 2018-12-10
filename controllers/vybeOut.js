@@ -9,7 +9,7 @@ const VybeOut = require('../models/vybeOut');
 const mongodbURI = require('../config/config');
 
 // gridfs stream init
-const conn = mongoose.createConnection(mongodbURI);
+const conn = mongoose.createConnection(process.env.URI);
 let gfs;
 conn.once('open', () => {
   gfs = Grid(conn.db, mongoose.mongo);
