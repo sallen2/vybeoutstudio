@@ -1,13 +1,12 @@
 <script src="../js/contribute.js"></script>
-{{!-- Stephan's Style --}}
-{{!-- {{#each vybeBeats}}
+{{#each vybeBeats}}
 {{#if Contribute }}
 <div class="col s6 m4 cardMiddle" class='cardMiddle' style="min-width: 300px; max-width: 550px">
     <div class="card horizontal" style=" background-color: #fff3E0;">
         <h5 class="audioStyle">Producer: {{Author}}</h5>
         <p class="audioStyle">Beat Name: {{BeatName}}</p>
         <em class="audioStyle">Tempo: {{Tempo}}</em>
-        <a href="/create" producer='{{BeatName}}' beat='{{Beat}}' tempo="{{Tempo}}" class="btn-floating halfway-fab waves-effect waves-light"
+        <a href="/create" producer='{{BeatName}}' beat='{{Beat}}' tempo="{{Tempo}}" class="btn-floating halfway-fab waves-effect waves-light contribute"
             style="background-color: #032d4d"><i class="fas fa-plus"></i></a>
         <audio style="margin-left: 15%" controls loop>
             <source src="/audio/{{Beat}}" type="audio/ogg">
@@ -15,31 +14,4 @@
     </div>
 </div>
 {{/if}}
-{{/each}} --}}
-
-<main>
-    <div class="row">
-        {{#each vybeBeats}}
-        {{#if Contribute }}
-        <div class="col s6 m4 cardMiddle" class='cardMiddle' style="min-width: 300px; max-width: 550px">
-            <div class="card horizontal" style=" background-color: #fff3E0;">
-                <h5 class="audioStyle">Producer: {{Author}}</h5>
-                <p class="audioStyle">Beat Name: {{BeatName}}</p>
-                <em class="audioStyle">Tempo: {{Tempo}}</em>
-                <a href="/create" producer='{{BeatName}}' beat='{{Beat}}' tempo="{{Tempo}}" class="btn-floating halfway-fab waves-effect waves-light"
-                    style="background-color: #032d4d"><i class="fas fa-plus"></i></a>
-                <audio style="margin-left: 15%" controls loop>
-                    <source src="/audio/{{Beat}}" type="audio/ogg">
-                </audio>
-            </div>
-        </div>
-        {{/if}}
-        {{/each}}
-    </div>
-</main>
-
-<footer>
-    <div class="footer-copyright2 navText">
-        © 2018 Vybe Out Studio
-    </div>
-</footer>
+{{/each}}
