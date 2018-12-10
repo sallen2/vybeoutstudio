@@ -7,6 +7,9 @@
     "test": "mocha",
     "start": "node server.js"
   },
+  "engines": {
+    "node": "v10.8.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sallen2/vybeoutstudio.git"
@@ -35,8 +38,5 @@
     "eslint-plugin-import": "^2.14.0",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0"
-  },
-  "engines": {
-    "node": "v10.8.0"
   }
 }
