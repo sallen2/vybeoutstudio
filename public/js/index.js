@@ -1,12 +1,14 @@
 $(document).ready(() => {
-  $(window).unload(function () {
-    localStorage.clear();
-  });
-
+  let i = 0;
   Tone.Transport.bpm.value = localStorage.getItem('Tempo') || 120;
 
   $('#tempo').text(`${Tone.Transport.bpm.value}`);
-  Tone.context.latencyHint = 'fastest';
+  Tone.context.latencyHint = 0.0;
+  Tone.context.updateInterval = 0.0;
+
+  const freeverb = new Tone.Freeverb().toMaster();
+  freeverb.dampening.value = 1000;
+  const pingPong = new Tone.PingPongDelay().toMaster();
   let octave = 4;
   let record = false;
   const keys = [];
@@ -18,6 +20,8 @@ $(document).ready(() => {
   let theEvent;
   const actx = Tone.context;
   const dest = actx.createMediaStreamDestination();
+  pingPong.connect(dest);
+  freeverb.connect(dest);
   const recorder = new MediaRecorder(dest.stream);
   const chunks = [];
 
@@ -320,9 +324,9 @@ $(document).ready(() => {
           if (note) {
             prevKey = key;
             if (record) {
-              theEvent = new Tone.Event(((position, theNote) => {
+              theEvent = new Tone.Event((position, theNote) => {
                 ins.ins.triggerAttackRelease(theNote, '4n', qu);
-              }), note);
+              }, note);
               theEvent.humanize = true;
               theEvent.start();
             } else {
@@ -338,14 +342,9 @@ $(document).ready(() => {
 
   const onKeyUp = (() => {
     let listener;
-    let prev;
 
     return (ins) => {
       // Clean-up.
-      if (prev) {
-        prev.triggerRelease();
-      }
-
       document.removeEventListener('keyup', listener);
 
       prev = ins;
@@ -384,13 +383,14 @@ $(document).ready(() => {
       Tone.Transport.scheduleRepeat((time) => {
         player.start();
       }, '4n');
-      Tone.Transport.start('+0.1', '1:2:4.999');
+      Tone.Transport.start();
     } else {
-      const player2 = new Tone.Player(`/audio/${localStorage.getItem('Beat')}`, (() => {
+      // Tone.Transport.setLoopPoints('2m', '4m');
+      const player2 = new Tone.Player(`/audio/${localStorage.getItem('Beat')}`, () => {
         Tone.Transport.start();
-      })).sync().toMaster();
+      }).toMaster();
       player2.connect(dest);
-      player2.start();
+      player2.sync().start();
       Tone.Transport.scheduleRepeat((time) => {
         player.start();
       }, '4n');
@@ -406,40 +406,42 @@ $(document).ready(() => {
     Tone.Transport.stop();
   }
 
-  $(document).on('click', '#contribute', (e) => {
-    const beat = $('#contribute').attr('beat');
-    console.log('click');
-  });
-
   $('#shareStop').on('click', (e) => {
     record = false;
     Tone.Transport.stop();
   });
 
   $('.share').on('click', (e) => {
-    Tone.Transport.start('+0.1', '1:2:4.999');
-    recorder.ondataavailable = evt => chunks.push(evt.data);
-    recorder.start();
-    setTimeout(() => {
-      recorder.stop();
-      Tone.Transport.stop();
-      recorder.onstop = (evt) => {
-        const blob = new Blob(chunks, { type: 'audio/ogg; codecs=opus' });
-        const fd = new FormData();
-        fd.append('audio', blob, 'blobby.ogg');
-        fd.append('producerName', $('#producer').val());
-        fd.append('beatName', $('#beatName').val());
-        fd.append('contribute', $('#contrib').val());
-        fd.append('tempo', $('#tempo').text());
-        $.ajax({
-          method: 'POST',
-          url: '/create',
-          data: fd,
-          processData: false,
-          contentType: false,
-        }).done(location.reload());
-      };
-    }, 10000);
+    i = 0;
+    Tone.Transport.scheduleRepeat((time) => {
+      i++;
+      if (i === 5) {
+        console.log('start');
+        recorder.start();
+        recorder.ondataavailable = evt => chunks.push(evt.data);
+        setTimeout(() => {
+          recorder.stop();
+          Tone.Transport.stop();
+          recorder.onstop = (evt) => {
+            const blob = new Blob(chunks, { type: 'audio/ogg; codecs=opus' });
+            const fd = new FormData();
+            fd.append('audio', blob, 'blobby.ogg');
+            fd.append('producerName', $('#producer').val());
+            fd.append('beatName', $('#beatName').val());
+            fd.append('contribute', $('#contrib').val());
+            fd.append('tempo', $('#tempo').text());
+            $.ajax({
+              method: 'POST',
+              url: '/create',
+              data: fd,
+              processData: false,
+              contentType: false,
+            }).done(location.reload());
+          };
+        }, 10000);
+      }
+    }, '2n');
+    Tone.Transport.start();
   });
 
   $('#start').on('click', (e) => {
@@ -475,12 +477,12 @@ $(document).ready(() => {
     const ins = new Tone.Sampler({
       C4: '../sounds/LL_hihat_remix.wav',
       D4: '../sounds/LL_snare_pyrex.wav',
-      F4: '../sounds/808.wav',
+      F4: '../sounds/38[kb]avenger-horn.wav.mp3',
       E4: '../sounds/FX_VoxBobby_Wet.wav',
       G4: '../sounds/808.wav',
       A4: '../sounds/808.wav',
       B4: '../sounds/38[kb]avenger-horn.wav.mp3',
-      C5: '../sounds/38[kb]avenger-horn.wav.mp3',
+      C5: '../sounds/808.wav',
     }, {
       release: 1,
     });
@@ -502,6 +504,8 @@ $(document).ready(() => {
       release: 1,
     });
     ins.connect(dest);
+    ins.connect(freeverb);
+    ins.connect(pingPong);
     ins.toMaster();
     const piano = {
       ins,
@@ -580,6 +584,9 @@ $(document).ready(() => {
     onKeyUp(pluck);
   });
 
+  $(window).unload(function () {
+    localStorage.clear();
+  });
 
   $('.userButton').on('click', function (e) {
     e.preventDefault();
