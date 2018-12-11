@@ -2,11 +2,12 @@
 <script src="../js/index.js"></script>
 <div class="container-fluid">
 
+<h4 class="center-align" style="color: #fff3E0;">VybeOut and Create Something New!</h4>
     <div class="row dropdown">
 
 
         <div class="col-md-2">
-            <button id="plusbtn" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            <button id="plusbtn" type="button" class="tooltipped dropdown-toggle" data-position="top" data-tooltip="Click me to add an instrument. Then click the instrument button to activate the instrument." data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 <svg id="plusvg" width="100" height="100" class="icon  icon--plus" viewBox="0 0 5 5" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z"></path>
@@ -48,19 +49,19 @@
                     <option value="@32n">32</option>
                 </select>
                 <div class="input-group-append">
-                    <button id='confirm' class="btn btn-outline-secondary buttonText" type="button">quantize</button>
+                    <button id='confirm' class="btn btn-outline-secondary buttonText tooltipped" data-position="bottom" data-tooltip="Select a value from the drop down then click me so I can correct your errors." type="button">quantize</button>
                 </div>
             </div>
         </form>
 
     <div>
         <input id="bpm" type="range" min="50" max="200" step="1" value="120">
-        <button id="start"><i class="fas fa-play-circle fa-2x"></i></button>
-        <button id="stop"><i class="fas fa-stop-circle fa-2x"></i></button>
-        <button id="record"><svg height="40" width="40">
+        <button id="start"><i class="tooltipped fas fa-play-circle fa-2x" data-position="bottom" data-tooltip="Click me to start the sequence."></i></button>
+        <button id="stop"><i class="tooltipped fas fa-stop-circle fa-2x" data-position="bottom" data-tooltip="Click me to stop the sequence."></i></button>
+        <button id="record" class="tooltipped" data-position="bottom" data-tooltip="Click me to record your input."><svg height="40" width="40">
             <circle cx="20" cy="18" r="15" stroke="black" stroke-width="0" fill="red" />
         </svg><br></button>
-        <h5 class="text-right tempotext">Tempo: <span id="tempo">120</span></h5>
+        <h5 class="text-right tempotext tooltipped" data-position="bottom" data-tooltip='Slide the bar above to change the tempo.'>Tempo: <span id="tempo">120</span></h5>
 
         </div>
 
@@ -80,7 +81,7 @@
 </div>
 
 <!-- Modal Trigger -->
-<a class="waves-effect waves-light btn modal-trigger classin buttonText" href="#modal1" id="shareStop">SHARE</a>
+<a class="waves-effect waves-light btn modal-trigger buttonText tooltipped" data-position="bottom" data-tooltip="Click me to share your project." href="#modal1" id="shareStop">SHARE</a>
 
 <!-- Modal Structure -->
 <div id="modal1" style="background-color: #c5ebc3" class="modal bottom-sheet">

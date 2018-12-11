@@ -69,6 +69,13 @@ router.post('/create', upload.single('audio'), (req, res) => {
   res.status(201).end();
 });
 
+router.get('/api/data', (req, res) => {
+  VybeOut.find({}, (err, vybeBeats) => {
+    if (err) throw new Error('Something went wrong');
+    res.json(vybeBeats);
+  });
+});
+
 // route that streams audio from mongodb SUPER COOL!!!
 router.get('/audio/:filename', (req, res) => {
   gfs.files.findOne({ filename: req.params.filename }, (err, file) => {

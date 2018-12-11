@@ -1,7 +1,10 @@
+<script src="https://unpkg.com/scrollreveal"></script>
 <script src="../js/contribute.js"></script>
+<h1 class="center-align navText">VybeOut Contribute</h1>
+<h4 class="center-align">Pick a beat and add your own touch to it.</h4>
 {{#each vybeBeats}}
 {{#if Contribute }}
-<div class="col s6 m4 cardMiddle" class='cardMiddle' style="min-width: 300px; max-width: 550px">
+<div class="col s6 m4 cardMiddle load-hidden" style="min-width: 300px; max-width: 550px">
     <div class="card horizontal" style=" background-color: #fff3E0;">
         <h5 class="audioStyle">Producer: {{Author}}</h5>
         <p class="audioStyle">Beat Name: {{BeatName}}</p>

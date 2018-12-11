@@ -76,10 +76,10 @@ $(document).ready(() => {
         _.each(items, (node) => {
           grid.addWidget($(`<div>
           <div class="grid-stack-item-content gridstackdrum">
-          <button id="drums" class="instbtn">drums</button>
+          <button id="drums" class="waves-light btn instrumentColor">drums</button>
           <input id='drumKitVol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="drumsR" class="instbtn">Reverb</button>
-          <button id="drumsD" class="instbtn">Delay</button>
+          <button id="drumsR" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="drumsD" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -98,11 +98,16 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
+<<<<<<< HEAD
+          <div class="grid-stack-item-content gridstackdrum">
+          <button id="drums2" class="waves-light btn instrumentColor">Drum Kit 2</button>
+=======
           <div class="grid-stack-item-content gridstackdrum2">
           <button id="drums2" class="instbtn">drums</button>
+>>>>>>> c17a697a8c738173995d006c777e65f7b3eb0f88
           <input id='drumKit2Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="drums2R" class="instbtn">Reverb</button>
-          <button id="drums2D" class="instbtn">Delay</button>
+          <button id="drums2R" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="drums2D" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -121,11 +126,16 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
+<<<<<<< HEAD
+          <div class="grid-stack-item-content gridstackdrum">
+          <button id="guitar1" class="waves-light btn instrumentColor">Guitar 1</button>
+=======
           <div class="grid-stack-item-content gridstackguitar">
           <button id="guitar1" class="instbtn">Guitar 1</button>
+>>>>>>> c17a697a8c738173995d006c777e65f7b3eb0f88
           <input id='guitar1Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="guitar1R" class="instbtn">Reverb</button>
-          <button id="guitar1D" class="instbtn">Delay</button>
+          <button id="guitar1R" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="guitar1D" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -144,11 +154,16 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
+<<<<<<< HEAD
+          <div class="grid-stack-item-content gridstackdrum">
+          <button id="pad" class="waves-light btn instrumentColor">Pad</button>
+=======
           <div class="grid-stack-item-content gridstackpad">
           <button id="pad" class="instbtn">Pad</button>
+>>>>>>> c17a697a8c738173995d006c777e65f7b3eb0f88
           <input id='padVol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="padR" class="instbtn">Reverb</button>
-          <button id="padD" class="instbtn">Delay</button>
+          <button id="padR" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="padD" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -167,11 +182,16 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
+<<<<<<< HEAD
+          <div class="grid-stack-item-content gridstackdrum">
+          <button id="steelPluck" class="waves-light btn instrumentColor">Steel Pluck</button>
+=======
           <div class="grid-stack-item-content gridsteelpluck">
           <button id="steelPluck" class="instbtn">Steel Pluck</button>
+>>>>>>> c17a697a8c738173995d006c777e65f7b3eb0f88
           <input id='steelPluckVol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="steelPluckR" class="instbtn">Reverb</button>
-          <button id="steelPluckD" class="instbtn">Delay</button>
+          <button id="steelPluckR" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="steelPluckD" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -190,11 +210,16 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
+<<<<<<< HEAD
+          <div class="grid-stack-item-content gridstackdrum">
+          <button id="synthPluck" class="waves-light btn instrumentColor">Synth Pluck</button>
+=======
           <div class="grid-stack-item-content gridsynthpluck">
           <button id="synthPluck" class="instbtn">Synth Pluck</button>
+>>>>>>> c17a697a8c738173995d006c777e65f7b3eb0f88
           <input id='synthPluckVol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="synthPluckR" class="instbtn">Reverb</button>
-          <button id="synthPluckD" class="instbtn">Delay</button>
+          <button id="synthPluckR" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="synthPluckD" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -213,11 +238,16 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
+<<<<<<< HEAD
+          <div class="grid-stack-item-content gridstackdrum">
+          <button id="choir1" class="waves-light btn instrumentColor">Choir 1</button>
+=======
           <div class="grid-stack-item-content gridstackchoir">
           <button id="choir1" class="instbtn">Choir 1</button>
+>>>>>>> c17a697a8c738173995d006c777e65f7b3eb0f88
           <input id='choir1Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="choir1R" class="instbtn">Reverb</button>
-          <button id="choir1D" class="instbtn">Delay</button>
+          <button id="choir1R" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="choir1D" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -236,11 +266,16 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
+<<<<<<< HEAD
+          <div class="grid-stack-item-content gridstackdrum">
+          <button id="choir2" class="waves-light btn instrumentColor">Choir 2</button>
+=======
           <div class="grid-stack-item-content gridstackchoir2">
           <button id="choir2" class="instbtn">Choir 2</button>
+>>>>>>> c17a697a8c738173995d006c777e65f7b3eb0f88
           <input id='choir2Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="choir2R" class="instbtn">Reverb</button>
-          <button id="choir2D" class="instbtn">Delay</button>
+          <button id="choir2R" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="choir2D" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -259,11 +294,16 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
+<<<<<<< HEAD
+          <div class="grid-stack-item-content gridstackdrum">
+          <button id="guitar2" class="waves-light btn instrumentColor">Guitar 2</button>
+=======
           <div class="grid-stack-item-content gridstackguitar2">
           <button id="guitar2" class="instbtn">Guitar 2</button>
+>>>>>>> c17a697a8c738173995d006c777e65f7b3eb0f88
           <input id='guitar2Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="guitar2R" class="instbtn">Reverb</button>
-          <button id="guitar2D" class="instbtn">Delay</button>
+          <button id="guitar2R" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="guitar2D" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -283,10 +323,10 @@ $(document).ready(() => {
         _.each(items, (node) => {
           grid.addWidget($(`<div>
           <div class="grid-stack-item-content gridstackpiano">
-          <button id="piano" class="instbtn">piano</button>
+          <button id="piano" class="waves-light btn instrumentColor">piano</button>
           <input id='pianoVol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="pianoR" class="instbtn">Reverb</button>
-          <button id="pianoD" class="instbtn">Delay</button>
+          <button id="pianoR" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="pianoD" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -306,10 +346,10 @@ $(document).ready(() => {
         _.each(items, (node) => {
           grid.addWidget($(`<div>
           <div class="grid-stack-item-content gridpluck">
-          <button id="pluck" class="instbtn">pluck</button>
+          <button id="pluck" class="waves-light btn instrumentColor">pluck</button>
           <input id='pluckVol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="pluckR" class="instbtn">Reverb</button>
-          <button id="pluckD" class="instbtn">Delay</button>
+          <button id="pluckR" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="pluckD" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -329,10 +369,10 @@ $(document).ready(() => {
         _.each(items, (node) => {
           grid.addWidget($(`<div>
           <div class="grid-stack-item-content gridsynth">
-          <button id="synth" class="instbtn">synth</button>
+          <button id="synth" class="waves-light btn instrumentColor">synth</button>
           <input id='synthVol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="synthR" class="instbtn">Reverb</button>
-          <button id="synthD" class="instbtn">Delay</button>
+          <button id="synthR" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="synthD" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -352,10 +392,10 @@ $(document).ready(() => {
         _.each(items, (node) => {
           grid.addWidget($(`<div>
           <div class="grid-stack-item-content gridflute">
-          <button id="flute" class="instbtn">flute</button>
+          <button id="flute" class="waves-light btn instrumentColor">flute</button>
           <input id='fluteVol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="fluteR" class="instbtn">Reverb</button>
-          <button id="fluteD" class="instbtn">Delay</button>
+          <button id="fluteR" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="fluteD" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -375,10 +415,10 @@ $(document).ready(() => {
         _.each(items, (node) => {
           grid.addWidget($(`<div>
           <div class="grid-stack-item-content gridsax">
-          <button id="sax" class="instbtn">sax</button>
+          <button id="sax" class="waves-light btn instrumentColor">sax</button>
           <input id='saxVol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="saxR" class="instbtn">Reverb</button>
-          <button id="saxD" class="instbtn">Delay</button>
+          <button id="saxR" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="saxD" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -398,10 +438,10 @@ $(document).ready(() => {
         _.each(items, (node) => {
           grid.addWidget($(`<div>
           <div class="grid-stack-item-content gridtrumpet">
-          <button id="trumpet" class="instbtn">trumpet</button>
+          <button id="trumpet" class="waves-light btn instrumentColor">trumpet</button>
           <input id='trumpetVol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="trumpetR" class="instbtn">Reverb</button>
-          <button id="trumpetD" class="instbtn">Delay</button>
+          <button id="trumpetR" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="trumpetD" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -420,11 +460,16 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
+<<<<<<< HEAD
+          <div class="grid-stack-item-content gridtrumpet">
+          <button id="pluck2" class="waves-light btn instrumentColor">pluck 2</button>
+=======
           <div class="grid-stack-item-content gridpluck2">
           <button id="pluck2" class="instbtn">pluck 2</button>
+>>>>>>> c17a697a8c738173995d006c777e65f7b3eb0f88
           <input id='pluck2Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="pluck2R" class="instbtn">Reverb</button>
-          <button id="pluck2D" class="instbtn">Delay</button>
+          <button id="pluck2R" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="pluck2D" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -443,11 +488,16 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
+<<<<<<< HEAD
+          <div class="grid-stack-item-content gridtrumpet">
+          <button id="pluck3" class="waves-light btn instrumentColor">pluck 3</button>
+=======
           <div class="grid-stack-item-content gridpluck3">
           <button id="pluck3" class="instbtn">pluck 3</button>
+>>>>>>> c17a697a8c738173995d006c777e65f7b3eb0f88
           <input id='pluck3Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="pluck3R" class="instbtn">Reverb</button>
-          <button id="pluck3D" class="instbtn">Delay</button>
+          <button id="pluck3R" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="pluck3D" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -466,11 +516,16 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
+<<<<<<< HEAD
+          <div class="grid-stack-item-content gridtrumpet">
+          <button id="8081" class="waves-light btn instrumentColor">808 1</button>
+=======
           <div class="grid-stack-item-content grid8081">
           <button id="8081" class="instbtn">808 1</button>
+>>>>>>> c17a697a8c738173995d006c777e65f7b3eb0f88
           <input id='8081Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="8081R" class="instbtn">Reverb</button>
-          <button id="8081D" class="instbtn">Delay</button>
+          <button id="8081R" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="8081D" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -489,11 +544,16 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
+<<<<<<< HEAD
+          <div class="grid-stack-item-content gridtrumpet">
+          <button id="8082" class="waves-light btn instrumentColor">808 2</button>
+=======
           <div class="grid-stack-item-content grid8082">
           <button id="8082" class="instbtn">808 2</button>
+>>>>>>> c17a697a8c738173995d006c777e65f7b3eb0f88
           <input id='8082Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="8082R" class="instbtn">Reverb</button>
-          <button id="8082D" class="instbtn">Delay</button>
+          <button id="8082R" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="8082D" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -512,11 +572,16 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
+<<<<<<< HEAD
+          <div class="grid-stack-item-content gridtrumpet">
+          <button id="8083" class="waves-light btn instrumentColor">808 3</button>
+=======
           <div class="grid-stack-item-content grid8083">
           <button id="8083" class="instbtn">808 3</button>
+>>>>>>> c17a697a8c738173995d006c777e65f7b3eb0f88
           <input id='8083Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="8083R" class="instbtn">Reverb</button>
-          <button id="8083D" class="instbtn">Delay</button>
+          <button id="8083R" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="8083D" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -535,11 +600,16 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
+<<<<<<< HEAD
+          <div class="grid-stack-item-content gridtrumpet">
+          <button id="8084" class="waves-light btn instrumentColor">808 4</button>
+=======
           <div class="grid-stack-item-content grid8084">
           <button id="8084" class="instbtn">808 4</button>
+>>>>>>> c17a697a8c738173995d006c777e65f7b3eb0f88
           <input id='8084Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
-          <button id="8084R" class="instbtn">Reverb</button>
-          <button id="8084D" class="instbtn">Delay</button>
+          <button id="8084R" class="waves-light btn instrumentColor">Reverb</button>
+          <button id="8084D" class="waves-light btn instrumentColor">Delay</button>
           </div>
               </div>`),
           node.x, node.y, node.width, node.height);
@@ -1607,4 +1677,5 @@ $(document).ready(() => {
   });
   $('#modal1').modal();
   $('select').formSelect();
+  $('.tooltipped').tooltip();
 });

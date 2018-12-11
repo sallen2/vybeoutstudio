@@ -1,3 +1,7 @@
+html.sr .load-hidden {
+    visibility: hidden;
+}
+
 #plusbtn {
     background-color: #011627;
     border-color: #011627;
@@ -147,6 +151,11 @@ h6 {
     height: 50px;
     width: 50px;
     margin-top: -10px;
+}
+
+.instrumentColor{
+    background-color: #FFF3e0;
+    color: black;
 }
 
 .fas {
