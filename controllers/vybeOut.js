@@ -17,6 +17,7 @@ conn.once('open', () => {
 });
 
 // mongodb storage engine
+/* istanbul ignore next */
 const storage = new GridFsStorage({
   url: mongodbURI,
   file: (req, file) => new Promise((resolve, reject) => {
@@ -62,6 +63,7 @@ router.get('/contribute', (req, res) => {
 });
 
 // POST Route
+/* istanbul ignore next */
 router.post('/create', upload.single('audio'), (req, res) => {
   VybeOut.create({
     Author: req.body.producerName, BeatName: req.body.beatName, Beat: req.file.filename, Contribute: req.body.contribute, Tempo: req.body.tempo,
@@ -77,6 +79,7 @@ router.get('/api/data', (req, res) => {
 });
 
 // route that streams audio from mongodb SUPER COOL!!!
+/* istanbul ignore next */
 router.get('/audio/:filename', (req, res) => {
   gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
     if (err) throw new Error('file not there or something went wrong');

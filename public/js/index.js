@@ -1098,7 +1098,6 @@ $(document).ready(() => {
     let reverb = false;
     let delay = false;
     $(document).on('click', '#pianoR', function (e) {
-      console.log('click');
       reverb = !reverb;
       if (reverb) {
         ins.connect(freeverb);
@@ -1107,7 +1106,6 @@ $(document).ready(() => {
       }
     });
     $(document).on('click', '#pianoD', function (e) {
-      console.log('click');
       delay = !delay;
       if (delay) {
         ins.connect(pingPong);
