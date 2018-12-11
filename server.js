@@ -17,3 +17,5 @@ app.use(bodyParser.json());
 app.use('/', vybeOut);
 
 app.listen(process.env.PORT || 8080, () => console.log('server up on http://localhost:8080'));
+
+module.exports = app;
