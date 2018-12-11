@@ -98,7 +98,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content gridstackdrum">
+          <div class="grid-stack-item-content gridstackdrum2">
           <button id="drums2" class="instbtn">drums</button>
           <input id='drumKit2Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
           <button id="drums2R" class="instbtn">Reverb</button>
@@ -121,7 +121,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content gridstackdrum">
+          <div class="grid-stack-item-content gridstackguitar">
           <button id="guitar1" class="instbtn">Guitar 1</button>
           <input id='guitar1Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
           <button id="guitar1R" class="instbtn">Reverb</button>
@@ -144,7 +144,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content gridstackdrum">
+          <div class="grid-stack-item-content gridstackpad">
           <button id="pad" class="instbtn">Pad</button>
           <input id='padVol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
           <button id="padR" class="instbtn">Reverb</button>
@@ -167,7 +167,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content gridstackdrum">
+          <div class="grid-stack-item-content gridsteelpluck">
           <button id="steelPluck" class="instbtn">Steel Pluck</button>
           <input id='steelPluckVol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
           <button id="steelPluckR" class="instbtn">Reverb</button>
@@ -190,7 +190,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content gridstackdrum">
+          <div class="grid-stack-item-content gridsynthpluck">
           <button id="synthPluck" class="instbtn">Synth Pluck</button>
           <input id='synthPluckVol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
           <button id="synthPluckR" class="instbtn">Reverb</button>
@@ -213,7 +213,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content gridstackdrum">
+          <div class="grid-stack-item-content gridstackchoir">
           <button id="choir1" class="instbtn">Choir 1</button>
           <input id='choir1Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
           <button id="choir1R" class="instbtn">Reverb</button>
@@ -236,7 +236,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content gridstackdrum">
+          <div class="grid-stack-item-content gridstackchoir2">
           <button id="choir2" class="instbtn">Choir 2</button>
           <input id='choir2Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
           <button id="choir2R" class="instbtn">Reverb</button>
@@ -259,7 +259,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content gridstackdrum">
+          <div class="grid-stack-item-content gridstackguitar2">
           <button id="guitar2" class="instbtn">Guitar 2</button>
           <input id='guitar2Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
           <button id="guitar2R" class="instbtn">Reverb</button>
@@ -420,7 +420,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content gridtrumpet">
+          <div class="grid-stack-item-content gridpluck2">
           <button id="pluck2" class="instbtn">pluck 2</button>
           <input id='pluck2Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
           <button id="pluck2R" class="instbtn">Reverb</button>
@@ -443,7 +443,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content gridtrumpet">
+          <div class="grid-stack-item-content gridpluck3">
           <button id="pluck3" class="instbtn">pluck 3</button>
           <input id='pluck3Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
           <button id="pluck3R" class="instbtn">Reverb</button>
@@ -466,7 +466,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content gridtrumpet">
+          <div class="grid-stack-item-content grid8081">
           <button id="8081" class="instbtn">808 1</button>
           <input id='8081Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
           <button id="8081R" class="instbtn">Reverb</button>
@@ -489,7 +489,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content gridtrumpet">
+          <div class="grid-stack-item-content grid8082">
           <button id="8082" class="instbtn">808 2</button>
           <input id='8082Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
           <button id="8082R" class="instbtn">Reverb</button>
@@ -512,7 +512,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content gridtrumpet">
+          <div class="grid-stack-item-content grid8083">
           <button id="8083" class="instbtn">808 3</button>
           <input id='8083Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
           <button id="8083R" class="instbtn">Reverb</button>
@@ -535,7 +535,7 @@ $(document).ready(() => {
         const grid = $(this).data('gridstack');
         _.each(items, (node) => {
           grid.addWidget($(`<div>
-          <div class="grid-stack-item-content gridtrumpet">
+          <div class="grid-stack-item-content grid8084">
           <button id="8084" class="instbtn">808 4</button>
           <input id='8084Vol' id="vol" type="range" min="-50" max="0" step="1" value="-6">
           <button id="8084R" class="instbtn">Reverb</button>
