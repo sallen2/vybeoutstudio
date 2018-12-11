@@ -9,7 +9,7 @@ const VybeOut = require('../models/vybeOut');
 const mongodbURI = require('../config/config');
 
 // gridfs stream init
-const conn = mongoose.createConnection(mongodbURI);
+const conn = mongoose.createConnection(process.env.URI);
 let gfs;
 conn.once('open', () => {
   gfs = Grid(conn.db, mongoose.mongo);
@@ -67,6 +67,13 @@ router.post('/create', upload.single('audio'), (req, res) => {
     Author: req.body.producerName, BeatName: req.body.beatName, Beat: req.file.filename, Contribute: req.body.contribute, Tempo: req.body.tempo,
   });
   res.status(201).end();
+});
+
+router.get('/api/data', (req, res) => {
+  VybeOut.find({}, (err, vybeBeats) => {
+    if (err) throw new Error('Something went wrong');
+    res.json(vybeBeats);
+  });
 });
 
 // route that streams audio from mongodb SUPER COOL!!!
